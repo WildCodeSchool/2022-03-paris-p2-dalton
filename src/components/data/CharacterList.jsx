@@ -36,16 +36,21 @@ const CharacterList = () => {
     axios
       .get(`https://superheroapi.com/api/10228773588743778/70`)
         .then(response => response.json())
-        .then(data => setResults(data));
+        .then(data => setResults(data))
+        //.then(data => console.log(data))
+        
   }, []);
 
-  return (
-    //results
 
-    <ul>
-      {results.map(result => <li>{result.name}</li>)}
-    </ul>
-  );
+
+  return (
+    results.map(result => (
+      <ul>
+        <li>{result.name}</li>
+        <li>{result.id}</li>
+      </ul>
+    ))
+  )  
 };
 
 export default CharacterList

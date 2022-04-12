@@ -1,4 +1,5 @@
 import './Footer.css';
+import CharacterList from "../../data/CharacterList.jsx";
 
 function Footer() {
   return (
@@ -74,7 +75,11 @@ function Footer() {
             </svg>
           </div>
       </footer>
-       
+      <div>
+        <p>Avant</p>
+        <CharacterList />
+        <p>Après</p>
+      </div>
     </>
   );
 }
