@@ -1,0 +1,16 @@
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
+.st0 {
+    fill: #313131;
+}
+
+.st1 {
+    fill: #878787;
+}
+
+.st2 {
+    fill: none;
+}

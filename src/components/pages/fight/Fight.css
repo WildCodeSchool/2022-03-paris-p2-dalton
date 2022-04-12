@@ -1,0 +1,21 @@
+.fighters {
+    display: flex;
+    /*justify-content: space-between;*/
+    gap: 4rem;
+}
+
+.fighter {
+
+
+}
+img {
+    
+    
+    size: 50%;
+    height: 10%;
+    width: 10%;
+    /*
+    aspectRatio: 0.1; 
+    resizeMode: 'contain';*/
+
+}
