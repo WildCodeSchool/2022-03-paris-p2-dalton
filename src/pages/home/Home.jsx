@@ -2,10 +2,8 @@ import './Home.css';
 
 function Home() {
   return (
-    <main>
-      <div className='guard'>
-       </div>
-    </main>
+    <div className='guard'>
+    </div>
   );
 }
 
