@@ -1,6 +1,7 @@
 //import { useState } from "react";
 //import CharacterList from "../../data/CharacterList.jsx";
 import Characters from "../../data/Characters.jsx";
+import './Fight.css';
 
 
 //const MAX_LIFE = 100; // fighters have 100 max life points
@@ -37,22 +38,41 @@ const Fight = () => {
 //    return fighter1.name;
     return (
       <div>
-
-          <div className="fighters">
-            <div className="fighter">
-              <h3>{fighter1.name}</h3>
-              <img alt="fighter1" src={fighter1.image.url} />
-            </div>
-          { /* <CharacterList />*/}
-            <div className="fighter">
-              <h3>{fighter2.name}</h3>
-              <img alt="fighter2" src={fighter2.image.url} />
-            </div>
+        <div className="fighters2">
+          <div>
+            <div className="hearth"></div>
+            <h3>{fighter1.name}</h3>
+            <div className="fighter1"></div>
           </div>
+          <div>
+            <button className="fightButton">Combat</button>
+          </div>
+          <div>
+            <h3>{fighter2.name}</h3>
+            <div className="fighter2"></div>
+            <div className="hearth"></div>
+          </div>          
+        </div>
+      </div>
+    );
+}    
+
+{/*
+<div className="fighters">
+  <div className="fighter">
+    <h3>{fighter1.name}</h3>
+    <img alt="fighter1" src={fighter1.image.url} />
+  </div>
+  <div className="fighter">
+    <h3>{fighter2.name}</h3>
+    <img alt="fighter2" src={fighter2.image.url} />
+  </div>
+  </div> 
+
       </div>
     );
 
-}
+}*/}
 
 //console.log(Fight(Characters[0], Characters[1]));
 
