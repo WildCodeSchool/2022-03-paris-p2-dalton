@@ -1,25 +1,4 @@
 .fighters {
-    display: flex;
-    /*justify-content: space-between;*/
-    gap: 8rem;
-}
-
-.fighter {
-    height: 20px;
-    resize: vertical;
-    width: 40%;
-}
-
-/*
-.fighters2 {
-    display: flex;
-    justify-content: space-around;
-    height: 500px;
-    gap: 2rem;
-}
-*/
-
-.fighters2 {
     display: block;
     justify-content: space-around;
     height: 500px;
@@ -29,11 +8,7 @@
 .fighter1 {
     height: 500px;
     width: 480px;
-    /*object-fit: cover;*/
-
-    /*background-image: url();*/
     background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg);
-    /*resize: both;*/
 }
 
 .fighter2 {
