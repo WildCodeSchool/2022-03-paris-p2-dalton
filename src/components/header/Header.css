@@ -1,0 +1,62 @@
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
+.header {
+    height: 4rem;
+    display: flex;
+}
+
+.header-img {
+    background-color: blue;
+    width: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+}
+
+.header-title {
+    width: 50%;
+}
+
+.icons {
+    width: 50%;
+    display: flex;
+    gap: 1rem;
+}
+
+.header-navbar {
+    background-color: rgb(236, 29, 36);
+    width: 50%;
+    list-style-type: none;
+}
+
+
+.st0 {
+    fill: #313131;
+}
+
+.st1 {
+    fill: #878787;
+}
+
+.st2 {
+    fill: none;
+}
+
+.st3 {fill:#706F6F;
+}
+
+.header-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}

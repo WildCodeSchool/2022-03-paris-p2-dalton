@@ -1,0 +1,26 @@
+.fighters {
+    display: block;
+    justify-content: space-around;
+    height: 500px;
+    gap: 2rem;
+}
+
+.fighter1 {
+    height: 500px;
+    width: 480px;
+    background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg);
+}
+
+.fighter2 {
+    height: 500px;
+    width: 480px;
+    background-color: blue;
+    background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/639.jpg);
+}
+
+.fightButton {
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
