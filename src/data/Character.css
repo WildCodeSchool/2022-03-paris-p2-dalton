@@ -1,0 +1,46 @@
+
+/*
+.character-img {
+    width: 20vw;
+    height: 50vh;
+    object-fit: cover;
+}
+*/
+
+.character-img {
+    width: 5vw;
+    height: 10vh;
+    object-fit: cover;
+}
+/*
+.character-desc {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--main-color);
+    background-color: var(--second-color);
+}*/
+
+.character {
+    gap: 4px;
+    width: 300px;
+    /*flex-direction: row;*/
+    /*text-align: center;
+    color: var(--main-color);
+    background-color: var(--second-color);*/
+}
+
+
+.character-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+.character-desc span {
+    font-size: 1.2em;
+}*/
+
+.character-cards p {
+    font-size: 0.6em;
+}

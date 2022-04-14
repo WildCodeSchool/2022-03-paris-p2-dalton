@@ -1,0 +1,20 @@
+
+
+.characterList {
+    width: 80vw;
+    margin: auto;
+}
+
+.characterList-title {
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+/*    flex-direction: row;
+    gap: 4px;*/
+
+    /*justify-content: space-between;*/
+}
+

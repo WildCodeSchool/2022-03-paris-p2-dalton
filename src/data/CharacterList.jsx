@@ -1,25 +1,31 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import TokenAccess from "./TokenAccess.jsx";
+import Character from './Character';
 
 const CharacterList = () => {
-  const [results, setResults] = useState([]);
+  const [characters, setCharacters] = useState([]);
+
+  const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
   useEffect(() => {
     axios
-      .get(`https://superheroapi.com/api/10228773588743778/70`)
-        .then(response => response.json())
-        .then(data => setResults(data))
+      .get(url)
+        .then(res => res.data)
+        .then(data => setCharacters(data))
+ 
   }, []);
 
   return (
-    results.map(result => (
-      <ul>
-        <li>{result.name}</li>
-        <li>{result.id}</li>
-      </ul>
-    ))
-  )  
+    <div className="characterList">
+        <h2 className="section-title characterList-title">Faîtes votre choix !</h2>
+        <div className='cards-container'>
+            { characters &&
+            characters.map((character) => (
+                    <Character character={character} />
+            ))}
+        </div>
+    </div>
+  )
 };
 
 export default CharacterList
