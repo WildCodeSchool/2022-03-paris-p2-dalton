@@ -96,8 +96,8 @@ function Header() {
                   <li>
                     <Link to="fight">Fight</Link>
                   </li>
-                  <li>Match your heroes
-                    {/* <Link to="Match">Match your heroes</Link>  */}
+                  <li>
+                     <Link to="match">Match your heroes</Link> 
                   </li>
                   </li>
                   <li>Shop
