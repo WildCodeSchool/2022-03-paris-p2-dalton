@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="heroes" element={<Heroes />  */}
+              {/* <Route path="heroes" element={<Heroes />  */}
             <Route path ="match" element = {<Match/>}/>
             <Route path="fight" element={<Fight />} />
             {/* <Route path="Shop" element={<Shop /> */}

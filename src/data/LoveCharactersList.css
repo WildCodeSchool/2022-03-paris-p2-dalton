@@ -1,0 +1,27 @@
+.LoveCharactersList{
+    width: 80%;
+    margin: auto;
+}
+
+
+/* Titre */
+.LoveCharactersList-title{
+    text-align: center;
+    text-transform: uppercase;
+    align-items: center;
+    color:rgba(255, 255, 255, 1);
+    font-family: "Roboto Condensed";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top:2rem;
+
+
+
+}
+
+/* ----- Les Love cards ----- */
+.love-cards-container{
+    display:flex;
+    justify-content: space-between;
+}

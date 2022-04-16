@@ -1,0 +1,37 @@
+/* -----RESET----- */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background: #161414;
+}
+
+.love-cards {
+  border: 1px solid tomato;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.loveCharacter-img {
+  width: 144px;
+  height: 158px;
+  object-fit: cover;
+  border-radius: 16px 16px 0px 0px;
+}
+.loveCharacter-rectangle {
+  width: 144px;
+  height: 9px;
+  background: #166bf8;
+}
+.loveCharacter-name,h3 {
+  font-family: "Roboto Condensed";
+  line-height: 18.75px;
+  font-size: 16px;
+  font-weight: 700 bold;
+  margin-left:0.75rem;
+}
