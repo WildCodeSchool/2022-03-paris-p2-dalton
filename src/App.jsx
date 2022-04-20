@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home.jsx";
 import Fight from "./pages/fight/Fight.jsx";
-import Heroes from "./pages/heroes/Heroes.jsx";
+import CharacterDetails from "./data/CharacterDetails";
+import Shop from "./pages/shop/Shop.jsx";
 
 function App() {
   return (
@@ -11,8 +12,13 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="heroes" element={<Heroes />} />
+        {/* <Route path="heroes" element={<Heroes />  */}
+        {/* <Route path="Match" element={<Match /> */}
         <Route path="fight" element={<Fight />} />
+        {/* <Route path="Shop" element={<Shop /> */}
+        {/*            <Route path="/character/:id/fight" element={<CharacterDetails />} />*/}
+        <Route path="/:id/fight" />
+        <Route path="shop" element={<Shop />} />
       </Routes>
     </div>
   );
