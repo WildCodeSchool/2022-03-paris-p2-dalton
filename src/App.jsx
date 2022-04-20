@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './pages/home/Home.jsx';
 import Fight from './pages/fight/Fight.jsx';
+import Shop from './pages/shop/Shop.jsx';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
             {/* <Route path="heroes" element={<Heroes />  */}
             {/* <Route path="Match" element={<Match /> */}
             <Route path="fight" element={<Fight />} />
-            {/* <Route path="Shop" element={<Shop /> */}
+            <Route path="shop" element={<Shop />} />
         </Routes>
       </div>
   );
