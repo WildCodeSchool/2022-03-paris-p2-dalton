@@ -1,0 +1,55 @@
+h1 {
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+  text-transform: var(--h1-text-transform);
+}
+h3 {
+  font-family: var(--h3-font-family);
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  text-transform: var(--h3-text-transform);
+  line-height: var(--h3-line-height);
+}
+
+h4 {
+  font-family: var(--h4-font-family);
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
+  text-transform: var(--h4-text-transform);
+  line-height: var(--h4-line-height);
+}
+
+img {
+  width: 11.8rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  margin-bottom: 0rem;
+}
+
+.container_hero {
+  height: 118px;
+  width: 11.8rem;
+  background-color: #161414;
+  color: white;
+  border-radius: 0rem 0rem 1rem 1rem;
+  padding: 1rem;
+  margin-top: 0rem;
+}
+
+.border_blue {
+  background-color: #166bf8;
+  height: 0.8rem;
+}
+.container_heroes {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-top: 8rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+body {
+  background-color: #e5e5e5;
+}
