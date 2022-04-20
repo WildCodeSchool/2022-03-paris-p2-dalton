@@ -2,6 +2,12 @@ img {
   width: 11.8rem;
   border-radius: 1rem 1rem 0rem 0rem;
   margin-bottom: 0rem;
+  display: flex;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.1);
 }
 
 .container_hero {

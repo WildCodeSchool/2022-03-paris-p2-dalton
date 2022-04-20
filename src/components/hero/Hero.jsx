@@ -6,9 +6,10 @@ const Hero = ({ hero }) => {
   return (
     <div>
       <div>
-        <Link className="img" to={{ pathname: `/hero/${hero.id}` }}>
-          <img src={hero.image} alt={hero.name} />
+        <Link to={{ pathname: `/hero/${hero.id}` }}>
+          <img className="img" src={hero.image} alt={hero.name} />
         </Link>
+
         <div>
           <div className="border_blue"></div>
           <div className="container_hero">
