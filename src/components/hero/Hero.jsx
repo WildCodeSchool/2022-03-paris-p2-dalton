@@ -14,7 +14,6 @@ const Hero = ({ hero }) => {
           <div className="container_hero">
             <h3>{hero.name}</h3>
             <h4>{hero.race}</h4>
-            <p>{hero.gender}</p>
           </div>
         </div>
       </div>
