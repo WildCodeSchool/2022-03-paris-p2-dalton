@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Character from './Character';
+import "./CharacterList.css"
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
@@ -17,11 +18,10 @@ const CharacterList = () => {
 
   return (
     <div className="characterList">
-        <h2 className="section-title characterList-title">Faîtes votre choix !</h2>
         <div className='cards-container'>
             { characters &&
             characters.map((character) => (
-                    <Character character={character} />
+              <Character character={character} />
             ))}
         </div>
     </div>
