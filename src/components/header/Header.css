@@ -1,62 +1,211 @@
 
-:not(svg) {
-    transform-origin: 0px 0px;
-}
-
 .header {
     height: 4rem;
+    width: 100%;
     display: flex;
-}
-
-.header-img {
-    background-color: blue;
-    width: 50%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-
-}
-
-.header-title {
-    width: 50%;
-}
-
-.icons {
-    width: 50%;
-    display: flex;
-    gap: 1rem;
-}
-
-.header-navbar {
-    background-color: rgb(236, 29, 36);
-    width: 50%;
-    list-style-type: none;
-}
-
-
-.st0 {
-    fill: #313131;
-}
-
-.st1 {
-    fill: #878787;
-}
-
-.st2 {
-    fill: none;
-}
-
-.st3 {fill:#706F6F;
+    color: white;
+    /* background: linear-gradient(black,  #166BF8);*/
+    background: linear-gradient(to right, black,  #166BF8);
 }
 
 .header-navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row-reverse;
 }
 
-.menu {
+.link {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.link:hover, .link:active {
+     color: #00F
+}
+
+.header-logo {
+    padding-left: 20%;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    width: 80%;
+}
+
+.header-burger {
+width: 4rem;
+}
+
+.header-burger ul {
+    margin: 0;
+    padding-left: 1rem;
     list-style: none;
+    overflow: hidden;
+   background-color: rgb(41, 45, 78);
+   position: relative;
+   z-index: 1;
+}
+
+.menu-btn:hover {
+    background-color: rgb(124, 61, 61);
+}
+  
+  /* menu */ 
+.menu {
+    clear: both;
+    width: 100vh;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+  /* menu icon */
+.menu-icon {
+    height: 4rem;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.navicon {
+    background: whitesmoke;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: all .2s ease-out;
+    width: 18px;
+}  
+
+.navicon:before,
+.navicon:after {
+    background: whitesmoke;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}  
+
+.navicon:before {
+    top: 5px;
+}
+  
+.navicon:after {
+    top: -5px;
+}  
+
+/* menu btn */
+.menu-btn {
+    display: none;
+}
+
+.menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0px;
+  }
+/* burger */
+
+.header-cadie {
+    display: none;
+    width: 0%;
+}
+
+@media screen and (min-width:700px) and (max-width:1120px) { 
+
+    .header-logo {
+        width: 35%;
+        padding-left: 1%;
+    }
+
+    .header-navbar {
+        width: 92%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu-btn, .menu-icon {
+         display: none;
+    }
+
+    .header-burger ul {
+        margin: 0;
+        padding-left: 1rem;
+        overflow: visible;
+        background-color: transparent;
+    }
+ 
+    .menu {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    .header-cadie {
+        width: 8%;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width:1121px) { 
+    .header {
+        flex-direction: row;
+    }
+
+    .header-logo {
+        width: 25%;
+        padding-left: 1%;
+    }
+
+    .header-navbar {
+        width: 90%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu-btn, .menu-icon {
+        display: none;
+    }
+
+   .header-burger ul {
+    margin: 0;
+    padding-left: 1rem;
+    overflow: visible;
+    background-color: transparent;
+    }
+
+    .menu {
+        display: flex;
+        gap: 5rem;
+        list-style: none;
+    }
+
+    .header-cadie {
+        width: 10%;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
 }
