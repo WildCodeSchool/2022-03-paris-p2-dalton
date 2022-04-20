@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './pages/home/Home.jsx';
 import Fight from './pages/fight/Fight.jsx';
+import CharacterDetails from "./data/CharacterDetails";
+import Shop from './pages/shop/Shop.jsx';
+
 
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
             {/* <Route path="Match" element={<Match /> */}
             <Route path="fight" element={<Fight />} />
             {/* <Route path="Shop" element={<Shop /> */}
+{/*            <Route path="/character/:id/fight" element={<CharacterDetails />} />*/}
+            <Route path="/:id/fight" />
+            <Route path="shop" element={<Shop />} />
         </Routes>
       </div>
   );
