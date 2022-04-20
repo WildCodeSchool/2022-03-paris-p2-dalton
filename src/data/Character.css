@@ -1,0 +1,25 @@
+
+.character-img {
+    width: 10.8vh;
+    height: 10.8vh;
+    object-fit: cover;
+}
+
+.character {
+    display: flex;
+    gap: 4px;
+}
+
+.character p {
+    text-align: center;
+}
+
+.character-cards {
+    width: 10.8vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-cards p {
+    font-size: 0.5em;
+}
