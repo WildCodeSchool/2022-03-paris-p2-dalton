@@ -1,0 +1,17 @@
+
+.characterList {
+    width: 100vw;
+    margin: auto;
+}
+
+.characterList-title {
+    text-align: center;
+}
+
+.cards-container {
+    display:  flex;
+    justify-content: space-between;
+    gap: 4px;
+    max-width: 100%;
+}
+
