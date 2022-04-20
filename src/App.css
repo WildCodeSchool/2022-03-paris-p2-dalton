@@ -1,9 +1,142 @@
-/* Mettre variables css */
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto+Condensed:wght@400;700&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Luckiest+Guy', sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --primary-color: #166bf8;
+  --secondary-color: #ea222e;
+  --primary-background-color: #161414;
+  --secondary-background-color: #e5e5e5;
+  --primary-gradient-color: linear-gradient(
+    268.71deg,
+    #166bf8 -21.28%,
+    #202020 31.78%
+  );
+  --secondary-gradient-color: linear-gradient(
+    85.52deg,
+    #166bf8 17.54%,
+    #161414 100%
+  );
+  --button-gradient-color: linear-gradient(
+    262.21deg,
+    #166bf8 13.73%,
+    #001aff 85.14%
+  );
+  --button-gradient-border: border: 2px solid, linear-gradient(266.28deg, #166BF8 14.18%, #001AFF 93.1%);
+  ;
+
+
+  /* Fonts */
+  --h1-font-family: "Roboto Condensed";
+  --h1-font-weight: 700;
+  --h1-font-size: 48px;
+  --h1-text-transform: uppercase;
+
+  --h2-font-family: "Roboto Condensed";
+  --h2-font-weight: 700;
+  --h2-font-size: 36px;
+  --h2-text-transform: uppercase;
+  --h2-line-height: 42px;
+
+  --h3-font-family: "Roboto Condensed";
+  --h3-font-weight: 700;
+  --h3-font-size: 20px;
+  --h3-text-transform: uppercase;
+  --h3-line-height: 23px;
+
+  --h4-font-family: "Roboto Condensed";
+  --h4-font-weight: 400;
+  --h4-font-size: 20px;
+  --h4-text-transform: uppercase;
+  --h4-line-height: 23px;
+
+  --h5-font-family: "Roboto Condensed";
+  --h5-font-weight: 400;
+  --h5-font-size: 13px;
+  --h5-line-height: 15px;
+
+  --h6-font-family: "Roboto Condensed";
+  --h6-font-weight: 400;
+  --h6-font-size: 13px;
+  --h6-line-height: 15px;
+  --h6-text-transform: uppercase;
+
+  --p-font-family: "Roboto Condensed";
+  --p-font-weight: 400;
+  --p-font-size: 15px;
+  --p-line-height: 22px;
+
+  --nav-font-family: "Roboto Condensed";
+  --nav-font-weight: 700;
+  --nav-font-size: 16px;
+  --nav-line-height: 50px;
+  --nav-text-transform: uppercase;
+
+  --button-font-family: "Roboto Condensed";
+  --button-font-weight: 700;
+  --button-font-size: 16px;
+  --button-line-height: 20px;
+  --button-text-transform: uppercase;
+
+}
+
+h1 {
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+  text-transform: var(--h1-text-transform);
+}
+
+h2 {
+  font-family: var(--h2-font-family);
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
+  text-transform: var(--h2-text-transform);
+  line-height: var(--h2-line-height);
+}
+
+h3 {
+  font-family: var(--h3-font-family);
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  text-transform: var(--h3-text-transform);
+  line-height: var(--h3-line-height);
+}
+
+h4 {
+  font-family: var(--h4-font-family);
+  font-size: 13px;
+  font-weight: var(--h4-font-weight);
+  text-transform: var(--h4-text-transform);
+  line-height: var(--h4-line-height);
+}
+
+h5 {
+  font-family: var(--h5-font-family);
+  font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight);
+  text-transform: var(--h5-text-transform);
+  line-height: var(--h5-line-height);
+}
+
+h6 {
+  font-family: var(--h6-font-family);
+  font-size: var(--h6-font-size);
+  font-weight: var(--h6-font-weight);
+  text-transform: var(--h6-text-transform);
+  line-height: var(--h6-line-height);
+  text-transform: var(--h6-text-transform);
+}
+
+p {
+  font-family: var(--p-font-family);
+  font-size: var(--p-font-weight);
+  font-weight: var(--p-font-size);
+  line-height: var(--p-line-height);
+}
+
