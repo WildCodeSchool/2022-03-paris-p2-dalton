@@ -10,7 +10,6 @@ export const Match = ({loveCharacter}) => {
       <LoveCharactersList/>
 
       
-      <button className="loveCharater-button">Let's MATCH</button>
       
       </div>
   )

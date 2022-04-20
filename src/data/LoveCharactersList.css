@@ -3,8 +3,7 @@
     margin: auto;
 }
 
-
-/* Titre */
+/* Title */
 .LoveCharactersList-title{
     text-align: center;
     text-transform: uppercase;
@@ -15,13 +14,12 @@
     font-weight: 400;
     line-height: 18px;
     margin-top:2rem;
-
-
-
 }
 
-/* ----- Les Love cards ----- */
+/* ----- Love cards ----- */
 .love-cards-container{
     display:flex;
     justify-content: space-between;
+
+
 }
