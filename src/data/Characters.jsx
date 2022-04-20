@@ -1,4 +1,3 @@
-
 const Characters = [
 {
     "name": "Ant-Man",
