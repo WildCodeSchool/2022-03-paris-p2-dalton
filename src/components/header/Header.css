@@ -151,6 +151,10 @@ width: 4rem;
     }
  
     .menu {
+        display: none;
+    }
+
+    .menu-desk {
         display: flex;
         gap: 1rem;
         list-style: none;
@@ -194,6 +198,10 @@ width: 4rem;
     }
 
     .menu {
+        display: none;
+    }
+
+    .menu-desk {
         display: flex;
         gap: 5rem;
         list-style: none;
