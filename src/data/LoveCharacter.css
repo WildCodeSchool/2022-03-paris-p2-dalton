@@ -1,0 +1,52 @@
+/* -----RESET----- */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #161414;
+}
+
+.love-cards {
+  background: #161414;
+  border-radius: 1rem;
+}
+h2,
+h3 {
+  color: #ffff;
+}
+.loveCharacter-img {
+  width: 9rem;
+  height: 9.8rem;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0px 0px;
+}
+
+.loveCharacter-rectangle {
+  width: 144px;
+  height: 9px;
+  background: #166bf8;
+}
+.loveCharacter-text{
+  background-color: #fff;
+  border-radius: 0 0 1rem 1rem;
+  font-family: "Roboto Condensed";
+
+}
+
+.loveCharacter-name {
+  line-height: 1.172rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color:#161414;
+  margin-left: 0.5rem;
+}
+.loveCharacter-item {
+  margin-left: 0.5rem;
+  color:#161414;
+  font-size: 0.813rem;
+}

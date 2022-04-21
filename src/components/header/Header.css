@@ -55,6 +55,10 @@ width: 4rem;
     transition: max-height .2s ease-out;
 }
 
+.menu-desk {
+    display: none;
+}
+
   /* menu icon */
 .menu-icon {
     height: 4rem;
@@ -151,6 +155,10 @@ width: 4rem;
     }
  
     .menu {
+        display: none;
+    }
+
+    .menu-desk {
         display: flex;
         gap: 1rem;
         list-style: none;
@@ -194,6 +202,10 @@ width: 4rem;
     }
 
     .menu {
+        display: none;
+    }
+
+    .menu-desk {
         display: flex;
         gap: 5rem;
         list-style: none;
