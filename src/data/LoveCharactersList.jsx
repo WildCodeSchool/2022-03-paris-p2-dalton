@@ -24,15 +24,16 @@ const LoveCharactersList = () => {
     <div className="LoveCharactersList">
         <h2 className="LoveCharactersList-title">Love is just a click away !</h2>
         <img src="" alt="" />
-        <button onClick={handleLoveCharacter}>Match</button>
         <div className='love-cards-container'>
             { loveCharacters &&
             loveCharacters.map((loveCharacter) => (
-                <div key={loveCharacter.id}>
+              <div key={loveCharacter.id}>
                     <LoveCharacter loveCharacter={loveCharacter} />
                 </div>
             ))}
+
         </div>
+            <button className="button-Match pulse" onClick={handleLoveCharacter}>Let’s MATCH !</button>
     </div>
 )
 }
