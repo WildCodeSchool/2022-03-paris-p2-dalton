@@ -51,7 +51,7 @@ const close = (e) => {
                 {/* <Link to="Match" className="link">Match your heroes</Link>  */}
               </li>
               <li>
-                <Link to="shop">Shop</Link>
+                <Link to="shop" className='link'>Hereos shop</Link>
               </li>
             </ul>
           </div>
