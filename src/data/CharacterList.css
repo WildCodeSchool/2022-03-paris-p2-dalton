@@ -2,16 +2,123 @@
 .characterList {
     width: 100vw;
     margin: auto;
+    margin-bottom: 4rem;
 }
-
+/*
 .characterList-title {
     text-align: center;
 }
-
+*/
 .cards-container {
     display:  flex;
     justify-content: space-between;
     gap: 4px;
     max-width: 100%;
 }
+
+
+.pageFight {
+    background-color: #3A3A3A;
+    color: white;
+    --colorFigth: #166BF8;
+    --fontFight: Roboto Condensed bold 1rem; text-transform: uppercase;
+    font-family: var( --fontFight);
+}
+
+.introduce {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.introduce p {
+    display: flex;
+    justify-content: center;
+}
+
+.fighters {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.fighter1, .fighter2 {
+    height:  15.25rem;
+    width: 11.8rem;
+    background-color: var( --colorFigth);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.imgFighter1, .imgFighter2 { 
+    height:158px;
+    /*width: 11.8rem;*/
+    border-radius: 10px 10px 0px 0px;
+}
+
+.midleBlock {
+    height: 0.5rem;
+}
+
+.fighter1Info, .fighter2Info {
+    height: 19vh;
+    background-color: white;
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.fighter1Info h4, .fighter2Info h4 {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.fighter1Info h5, .fighter2Info h5 {
+    margin-left: 2rem;
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.pannelButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+.fightButton {
+    height: 3.5rem;
+    width: 10rem;
+    font-family: var( --fontFight);
+    margin-bottom: 1rem;
+    border-radius: 10rem;
+    background-color: var( --colorFigth);
+    color: white;
+}
+
+@media screen and (min-width:361px) { 
+    .fighter1, .fighter2 {
+        height: 18.75rem;
+        width: 18rem;
+    }
+    
+    .imgFighter1, .imgFighter2 {
+        height: 16rem;
+        width: 18rem;
+    }  
+
+    .fighter1Info h5, .fighter2Info h5 {
+        margin-left: 6rem;
+    }
+    
+    .pannelButton {
+        margin-top: 0rem;
+    }    
+}
+
 
