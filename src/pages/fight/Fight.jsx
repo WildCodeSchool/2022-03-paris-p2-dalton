@@ -4,12 +4,23 @@ import './Fight.css';
 import heart from '../../assets/images/heart_full.svg'
 import heartVide from '../../assets/images/heart_empty.svg'
 
-
 const Fight = () => {
-/*
+  /*
+  let live1=fighter1.stamina;
+  let live2=fighter2.stamina;
+  let damage;
+
+  const fight = () => {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    if (fighter1.speed>fighter2.speed) {
+      damage = getRandomInt(fighter1.force/10);
+    }
+  }*/
+
   const fighter1 = Characters[4];
   const fighter2 = Characters[1];
-*/  
 
     return (
       <div className="pageFight">
@@ -20,11 +31,8 @@ const Fight = () => {
         <div>
           <CharacterList />
         </div>
-      </div>
-    );
-}    
-
-/*          
+        <div>
+          
           <div className="fighters">
             <div className="fighter1 selected">
               <img className="imgFighter1 selected" src={fighter1.image} alt="name" />
@@ -58,12 +66,13 @@ const Fight = () => {
            </div>          
           </div>
           <div className="pannelButton">
-            <button className="fightButton">Let's fight!</button>
+    {/*        <button className="fightButton" onClick={fight}>Let's fight!</button> */}
+              <button className="fightButton">Let's fight!</button>
+
           </div>
         </div>
-    </div>
+      </div>
     );
 }    
-*/
 
 export default Fight

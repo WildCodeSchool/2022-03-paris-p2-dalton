@@ -1,6 +1,4 @@
 
-/*
-
 .pageFight {
     background-color: #3A3A3A;
     color: white;
@@ -38,7 +36,6 @@
 .imgFighter1, .imgFighter2 { 
     height:158px;
     /*width: 11.8rem;*/
-/*    
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -107,4 +104,4 @@
     }    
 }
 
-*/
+
