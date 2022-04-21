@@ -42,7 +42,7 @@ function Header() {
                 <Link to="Match" className="link">Match your heroes</Link>
               </li>
               <li>
-                  <Link to="shop" className="link">Heroes shop</Link>
+                <Link to="shop" className="link">Heroes shop</Link>
               </li>
             </ul>
           </div>

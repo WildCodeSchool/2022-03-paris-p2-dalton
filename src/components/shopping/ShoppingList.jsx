@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Shopping from './Shopping';
+import './ShoppingList.css';
 
 const ShoppingList = () => {
     const [shoppings, setShoppings] = useState([]);
@@ -13,10 +14,21 @@ const ShoppingList = () => {
         .get(url)
         .then((res) => res.data)
         .then((data) => setShoppings(data))
-    }, [])
+    }, []);
+
+    const categories = shoppings.reduce(
+        (acc, shopping) => 
+        acc.includes(shopping.race) ? acc : acc.concat(shopping.race),
+        []
+    )
 
   return (
     <div>
+        <div className='whs-categories'>
+            {categories.map((cat) => (
+                <div key={cat}>{cat}</div>
+            ))}
+        </div>
         {shoppings && 
         shoppings.map((shopping) => (
             <div key={shopping.id}>

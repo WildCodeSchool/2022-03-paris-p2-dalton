@@ -1,0 +1,23 @@
+.whs-banner {
+    color: black;
+    text-align: right;
+    padding: 32px;
+    border: solid 3px whitesmoke;
+    display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+    background-color: rgb(15, 15, 15);
+}
+
+.whs-title {
+	padding-left: 8px;
+    color: rgb(245, 237, 237);
+    font-size: 22px;
+}
+
+.whs-logo {
+	height: 60px;
+	width: 60px;
+    margin-bottom: 8px;
+}
