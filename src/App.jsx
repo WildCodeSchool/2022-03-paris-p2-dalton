@@ -4,7 +4,7 @@ import Header from "./components/header/Header";
 import Home from "./pages/home/Home.jsx";
 import Heroes from "./pages/heroes/Heroes.jsx";
 import Fight from "./pages/fight/Fight.jsx";
-/*import Match from "./pages/match/Match.jsx";*/
+import Match from "./pages/match/Match.jsx";
 import Shop from "./pages/shop/Shop.jsx";
 import CharacterDetails from "./data/CharacterDetails";
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="heroes" element={<Heroes />} />
         <Route path="fight" element={<Fight />} />
-    {/*  <Route path="match" element={<Match />} /> */}
+       <Route path="match" element={<Match />} />
         <Route path="Shop" element={<Shop /> } />
         {/*            <Route path="/character/:id/fight" element={<CharacterDetails />} />*/}
        {/* <Route path="/:id/fight" /> */}

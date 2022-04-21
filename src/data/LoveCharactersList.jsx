@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LoveCharacter from './LoveCharacter';
 import "./LoveCharactersList.css";
+import"./LoveCharactersList.scss";
+import arrow from "../assets/images/bow_arrow_red.svg";
+
+
 
 const LoveCharactersList = () => {
   const [loveCharacters, setLoveCharacters] = useState([]);
@@ -22,8 +26,10 @@ const LoveCharactersList = () => {
   }
   return (
     <div className="LoveCharactersList">
+      <div className="title">
+        <img src={arrow} alt="" />
         <h2 className="LoveCharactersList-title">Love is just a click away !</h2>
-        <img src="" alt="" />
+        </div>
         <div className='love-cards-container'>
             { loveCharacters &&
             loveCharacters.map((loveCharacter) => (
@@ -31,9 +37,11 @@ const LoveCharactersList = () => {
                     <LoveCharacter loveCharacter={loveCharacter} />
                 </div>
             ))}
-
         </div>
-            <button className="button-Match pulse" onClick={handleLoveCharacter}>Let’s MATCH !</button>
+        <div className="button-container"> 
+            <button className="button-match pulse" onClick={handleLoveCharacter}>LET’S MATCH !</button>
+        </div>
+
     </div>
 )
 }
