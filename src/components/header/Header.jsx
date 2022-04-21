@@ -23,9 +23,9 @@ function Header() {
   return (
     <>
       <header className="header">
-        <div className='header-navbar'>
-          <div className='header-logo'>
-            <img height="60rem" src={wildheroes}/>
+        <div className="header-navbar">
+          <div className="header-logo">
+            <img height="60rem" src={wildheroes} />
           </div>
           <div className='desk-nav'>
             <ul className="menu-desk">
@@ -38,7 +38,8 @@ function Header() {
               <li>
                 <Link to="/fight" className="link">Fight</Link>
               </li>
-              <li>Match your heroes
+              <li>
+                Match your heroes
                 {/* <Link to="Match" className="link">Match your heroes</Link>  */}
               </li>
               <li>
