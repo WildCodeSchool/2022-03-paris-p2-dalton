@@ -50,8 +50,8 @@ const close = (e) => {
               <li>Match your heroes
                 {/* <Link to="Match" className="link">Match your heroes</Link>  */}
               </li>
-              <li>Shop
-                {/* <Link to="Shop" className="link">Heroes shop</Link> */}
+              <li>
+                <Link to="shop">Shop</Link>
               </li>
             </ul>
           </div>

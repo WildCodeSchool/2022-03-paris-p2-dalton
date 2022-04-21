@@ -1,19 +1,24 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Shopping.css';
 
-const Shopping = ({ shopping }) => {
+const Shopping = ({ shopping}) => {
   return (
-    <div>
+    <div className='whs-cards'>
         <div>
-           <Link to={{ pathname: `/shopping/${shopping.id}`}}>
-               <img src={shopping.image} alt={shopping.name} />
-           </Link>
-        <div>
-            <span>{shopping.name}</span>
-        </div>
-        <div>
-            <span>{shopping.race}</span>
-        </div>
+            {/* <Link to={{ pathname: `/shopping/${shopping.id}`}}>
+                <img className='whs-cards-images' src={shopping.image} alt={shopping.name} />
+            </Link> */}
+            <img className='whs-cards-images' src={shopping.image} alt={shopping.name} />
+            <div>
+                <span>{shopping.name}</span>
+            </div>
+            <div>
+                <span>{shopping.race}</span>
+            </div>
+            <div>
+                <span>Price</span>
+            </div>
         </div>
     </div>
   )

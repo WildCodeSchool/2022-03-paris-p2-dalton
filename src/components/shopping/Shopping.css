@@ -1,0 +1,17 @@
+.whs-cards {
+    border: solid 5px #677179;
+	border-radius: 10px;
+	height: 300px;
+	width: 250px;
+	margin: 60px;
+    background-color: whitesmoke;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+}
+
+.whs-cards-images {
+    width: 200px;
+}
