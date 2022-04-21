@@ -30,20 +30,19 @@ function Header() {
           <div className='desk-nav'>
             <ul className="menu-desk">
               <li>
-                <Link to="/" className="link">Home</Link>  
+                <Link to="/" className="link">Home</Link>
               </li>
-              <li>All heroes
-            {/*    <Link to="heroes" className="link">All heroes</Link>  */}  
+              <li>
+                <Link to="heroes" className="link">All heroes</Link>
               </li>
               <li>
                 <Link to="/fight" className="link">Fight</Link>
               </li>
               <li>
-                Match your heroes
-                {/* <Link to="Match" className="link">Match your heroes</Link>  */}
+                <Link to="Match" className="link">Match your heroes</Link>
               </li>
               <li>
-                  <Link to="shop" className="link">Heroes shop</Link> 
+                  <Link to="shop" className="link">Heroes shop</Link>
               </li>
             </ul>
           </div>
@@ -61,14 +60,14 @@ function Header() {
                   <li>
                     <Link to="/" onClick={close} className="link">Home</Link>  
                   </li>
-                  <li>All heroes
-                  {/*  <Link to="heroes" className="link">All heroes</Link> */}   
+                  <li>
+                    <Link to="heroes" onClick={close} className="link">All heroes</Link>
                   </li>
                   <li>
                     <Link to="fight" onClick={close} className="link">Fight</Link>
                   </li>
-                  <li>Match your heroes
-                    {/* <Link to="Match" className="link">Match your heroes</Link>  */}
+                  <li>
+                    <Link to="Match"  onClick={close} className="link">Match your heroes</Link>
                   </li>
                   <li>
                     <Link to="shop" onClick={close} className="link">Heroes shop</Link>
