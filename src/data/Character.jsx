@@ -2,17 +2,45 @@ import React, { useState } from 'react';
 import './Character.css';
 import { Link } from "react-router-dom"
 
-const Character = ({ character }) => {
+const Character = ({ character, fighters, setFighters, fighter1, setFighter1 } ) => {
+
+  //const {fighters, setFighters} = (fighters, setFighters);
+/*
+  const addFighter = (e) => {
+    //setFighters(e.target.value)
+    if (fighters.length < 1) {
+        setFighters(fighters.push(e.target.value))
+    }/*  else if (fighters.length===1) {
+      setFighters(e.target.value)
+    }*/
+    /*
+  }*/
+
+  const addFighter = (e) => {
+    console.log(e.target)
+    setFighter1(e.target)
+  }
 
   return (
-    <div className='character'>
-      <div className='character-cards'>
-          <p>{character.name}</p>
-          <Link to={{ pathname: `/character/${character.id}`}}>
-              <img className="character-img" alt={character.name} src={character.image} />
-          </Link>
+    <>
+      <div className='character'>
+        <div className='character-cards'>
+            <p>{character.name}</p>
+            {/*<img className="character-img" onClick={characterSelected} alt={character.name} src={character.image} />
+            <img className="character-img" alt={character.name} src={character.image} />*/}
+
+            <img className="character-img" onClick={addFighter} alt={character.name} src={character.image} />
+
+  {/*
+            <Link to={{ pathname: `/character/${character.id}`}}>
+                <img className="character-img" alt={character.name} src={character.image} />
+            </Link>
+          */}
+        </div>
       </div>
-    </div>
+     
+    </>
+
   )
 }
 
