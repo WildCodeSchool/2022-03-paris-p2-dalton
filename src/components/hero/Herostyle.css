@@ -33,6 +33,7 @@
   background-color: #166bf8;
   height: 0.8rem;
 }
+
 .container_heroes {
   display: flex;
   justify-content: center;
@@ -41,8 +42,4 @@
   padding-top: 8rem;
   padding-left: 8rem;
   padding-right: 8rem;
-}
-
-body {
-  background-color: #e5e5e5;
 }
