@@ -21,13 +21,20 @@ const CharacterList = () => {
  
   }, []);
 
+  // on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
+  const getID = (e) => {
+    console.log(e.currentTarget.id);
+    setFighter1(e.currentTarget.id)
+  }
+  
+
   return (
     <div>
       <div className="characterList">
           <div className='cards-container'>
               { characters &&
               characters.map((character) => (
-                <Character character={character} fighters={fighters} setFighters={setFighters} fighter1={fighter1} setFighter1={setFighter1}/>
+                <Character key={character.id} getID={getID} character={character} fighters={fighters} setFighters={setFighters} fighter1={fighter1} setFighter1={setFighter1}/>
               ))}
           </div>
       </div>

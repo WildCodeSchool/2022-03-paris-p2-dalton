@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Character.css';
 import { Link } from "react-router-dom"
 
-const Character = ({ character, fighters, setFighters, fighter1, setFighter1 } ) => {
+const Character = ({ character, fighters, setFighters, fighter1, setFighter1, getID } ) => {
 
   //const {fighters, setFighters} = (fighters, setFighters);
 /*
@@ -16,6 +16,7 @@ const Character = ({ character, fighters, setFighters, fighter1, setFighter1 } )
     /*
   }*/
 
+
   const addFighter = (e) => {
     console.log(e.target)
     setFighter1(e.target)
@@ -24,12 +25,12 @@ const Character = ({ character, fighters, setFighters, fighter1, setFighter1 } )
   return (
     <>
       <div className='character'>
-        <div className='character-cards'>
+        <div id={character.id} className='character-cards' onClick={getID}>
             <p>{character.name}</p>
             {/*<img className="character-img" onClick={characterSelected} alt={character.name} src={character.image} />
             <img className="character-img" alt={character.name} src={character.image} />*/}
 
-            <img className="character-img" onClick={addFighter} alt={character.name} src={character.image} />
+            <img className="character-img" alt={character.name} src={character.image} />
 
   {/*
             <Link to={{ pathname: `/character/${character.id}`}}>
