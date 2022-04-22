@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Character.css';
 import { Link } from "react-router-dom"
 
+// on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
 const Character = ({ character, fighters, setFighters, fighter1, setFighter1, getID } ) => {
 
   //const {fighters, setFighters} = (fighters, setFighters);
