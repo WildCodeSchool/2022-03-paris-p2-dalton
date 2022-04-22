@@ -4,6 +4,16 @@
 }
 
 /* Title */
+.title{
+    display:flex;
+}
+.title img{
+    width: 30px;
+    height: 30px;
+    margin-top: 2rem;
+    padding-right:0.5rem;
+}
+
 .LoveCharactersList-title{
     text-align: center;
     text-transform: uppercase;
@@ -14,6 +24,10 @@
     font-weight: 400;
     line-height: 18px;
     margin-top:2rem;
+    /* background-image: url("../assets/images/bow_arrow_red.svg");
+    background-repeat:no-repeat;
+    background-position:left;
+    background-size:25px; */
 }
 
 /* ----- Love cards ----- */
@@ -22,20 +36,7 @@
     justify-content: space-between;
     gap: 3rem;
     margin-bottom: 3rem;
+    padding-top: 5rem;
 }
-/* ----- Button Match -----*/
 
-.button-Match{
-    height: 55px;
-    width: 173px;
-    border-radius: 6.25rem;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 19px;
-    background: linear-gradient(262.21deg, #166BF8 13.73%, #001AFF 85.14%);
-    outline: none;
-    border:none;
-}
 
