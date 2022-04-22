@@ -1,0 +1,51 @@
+.button-container{
+  text-align: center;
+}
+
+.button-match {
+    height: 55px;
+    width: 173px;
+    border-radius: 6.25rem;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 19px;
+    background: linear-gradient(262.21deg, #166BF8 13.73%, #001AFF 85.14%);
+    outline: none;
+    border:none;
+}
+
+
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+$colors: (
+  pulse: #166BF8, 
+  close: #166BF8, 
+);
+
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+button {  
+  color: #166BF8;
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: adjust-hue(#001AFF, 45deg);
+    color: #fff;
+  }
+}
