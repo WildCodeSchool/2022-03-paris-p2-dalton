@@ -4,6 +4,14 @@ import FightCharacter from './FightCharacter';
 import "./FightCharacterList.css"
 import heart from '../../assets/images/heart_full.svg'
 import heartVide from '../../assets/images/heart_empty.svg'
+import sonDouleur1 from '../../assets/sons/male/VOXEfrt_Cri de douleur (ID 2361)_LS.wav'
+import sonDouleur2 from '../../assets/sons/male/VOXScrm_Cri wilhelm (ID 0477)_LS.wav'
+import sonDouleur3 from '../../assets/sons/FGHTBf_Chute de corps 1 (ID 2452)_LS.wav'
+import sonDouleur4 from '../../assets/sons/FGHTBf_Chute de corps 3 (ID 2454)_LS.wav'
+import sonDouleur5 from '../../assets/sons/FGHTImpt_Coup de poing 6 (ID 2461)_LS.wav'
+import sonDouleur6 from '../../assets/sons/HMNHart_Battement de coeur 1 (ID 0243)_LS.wav'
+
+const cris = [sonDouleur1,sonDouleur2,sonDouleur3,sonDouleur4,sonDouleur5,sonDouleur6]
 
 const FightCharacterList = () => {
   const [characters, setCharacters] = useState([])
@@ -15,7 +23,6 @@ const FightCharacterList = () => {
   const [fighter2, setFighter2] =useState({})
   const [isVisibleH2Fighter2, setIsVisibleH2Fighter2] = useState(true)
   const [isVisibleImgFighter2, setIsVisibleImgFighter2] = useState(false)
-
 
   const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
@@ -61,41 +68,45 @@ const FightCharacterList = () => {
 
      const fightStart = async (fighterA, liveA, setLiveA, fighterB, liveB, setLiveB) => {
 
-
       while (liveA>0 && liveB>0) {
+        let audio = new Audio(cris[getRandomInt(5)]);
 
         damage = getRandomInt(fighterA.force/10)
         liveB=liveB-damage
         setLiveB(liveB) 
 
-        if (liveB<0) {
+        audio.play();
+  
+        if (liveB<=0) {
+          document.getElementById('imgHeart1Fighter1').src=heartVide
+        }  else
+        if (liveB<(parseInt(fighterB.stamina)/3)) {
+          document.getElementById('imgHeart2Fighter1').src=heartVide
+        } else
+        if (liveB<(parseInt(fighterB.stamina)*2/3)) {
+          document.getElementById('imgHeart3Fighter1').src=heartVide
+        }
+
+        if (liveB<=0) {
           break;
         }
-
-        if (liveB<(fighterB.stamina*2/3)) {
-          document.getElementsByClassName('imgHeart2Fighter1').src={heartVide}
-        } 
-        if (liveB<(fighterB.stamina/3)) {
-          document.getElementsByClassName('imgHeart2Fighter2').src={heartVide}
-        }
-        if (liveB<0) {
-          document.getElementsByClassName('imgHeart2Fighter3').src={heartVide}
-        }   
-
+        
+      //  let audio = new Audio(cris[Math.floor(Math.random())]);
 
         damage = getRandomInt(fighterB.force/10)
         liveA=liveA-damage
         setLiveA(liveA) 
+        audio.play();
 
-        if (liveA<(fighterA.stamina*2/3)) {
-          document.getElementsByClassName('imgHeart1Fighter1').src={heartVide}
+        if (liveA<=0) {
+          document.getElementById('imgHeart1Fighter2').src=heartVide
+        } else
+        if (liveA<(parseInt(fighterA.stamina)/3)) {
+          document.getElementById('imgHeart2Fighter2').src=heartVide
+        } else
+        if (liveA<(parseInt(fighterA.stamina)*2/3)) {
+          document.getElementById('imgHeart3Fighter2').src=heartVide
         } 
-        if (liveA<(fighterA.stamina/3)) {
-          document.getElementsByClassName('imgHeart1Fighter2').src={heartVide}
-        }
-        if (liveA<0) {
-          document.getElementsByClassName('imgHeart1Fighter3').src={heartVide}
-        }
 
         await delay(1);
       }
@@ -141,9 +152,9 @@ const FightCharacterList = () => {
             <h5>Speed : {fighter1.speed}</h5>
             <h5>Live : {live1}</h5>
           <div className="heart selected">
-              <img className="imgHeart imgHeart1Fighter1" src={heart} alt="Coeur" />
-              <img className="imgHeart imgHeart2Fighter1" src={heart} alt="Coeur" />
-              <img className="imgHeart imgHeart3Fighter1" src={heart} alt="Coeur" />
+              <img id="imgHeart1Fighter1" src={heart} alt="Coeur" />
+              <img id="imgHeart2Fighter1" src={heart} alt="Coeur" />
+              <img id="imgHeart3Fighter1" src={heart} alt="Coeur" />
             </div>
           </div>
         </div>
@@ -161,9 +172,9 @@ const FightCharacterList = () => {
             <h5>Speed : {fighter2.speed}</h5>
             <h5>Live : {live2}</h5>
             <div className="heart selected">
-              <img className="imgHeart imgHeart1Fighter2" src={heart} alt="Coeur" />
-              <img className="imgHeart imgHeart2Fighter2" src={heart} alt="Coeur" />
-              <img className="imgHeart imgHeart3Fighter2" src={heart} alt="Coeur" />
+              <img id="imgHeart1Fighter2" src={heart} alt="Coeur" />
+              <img id="imgHeart2Fighter2" src={heart} alt="Coeur" />
+              <img id="imgHeart3Fighter2" src={heart} alt="Coeur" />
             </div>
           </div>
         </div>          
