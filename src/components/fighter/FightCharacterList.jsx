@@ -66,7 +66,7 @@ const FightCharacterList = () => {
 
     damage = getRandomInt(fighter1.force/10);
 
-     const fightStart = async (fighterA, liveA, setLiveA, fighterB, liveB, setLiveB) => {
+     const fightStart = async (fighterA, liveA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, liveB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
 
       while (liveA>0 && liveB>0) {
         let audio = new Audio(cris[getRandomInt(5)]);
@@ -78,13 +78,13 @@ const FightCharacterList = () => {
         audio.play();
   
         if (liveB<=0) {
-          document.getElementById('imgHeart1Fighter1').src=heartVide
+          document.getElementById(idHeartBImg1).src=heartVide
         }  else
         if (liveB<(parseInt(fighterB.stamina)/3)) {
-          document.getElementById('imgHeart2Fighter1').src=heartVide
+          document.getElementById(idHeartBImg2).src=heartVide
         } else
         if (liveB<(parseInt(fighterB.stamina)*2/3)) {
-          document.getElementById('imgHeart3Fighter1').src=heartVide
+          document.getElementById(idHeartBImg3).src=heartVide
         }
 
         if (liveB<=0) {
@@ -99,13 +99,13 @@ const FightCharacterList = () => {
         audio.play();
 
         if (liveA<=0) {
-          document.getElementById('imgHeart1Fighter2').src=heartVide
+          document.getElementById(idHeartAImg1).src=heartVide
         } else
         if (liveA<(parseInt(fighterA.stamina)/3)) {
-          document.getElementById('imgHeart2Fighter2').src=heartVide
+          document.getElementById(idHeartAImg2).src=heartVide
         } else
         if (liveA<(parseInt(fighterA.stamina)*2/3)) {
-          document.getElementById('imgHeart3Fighter2').src=heartVide
+          document.getElementById(idHeartAImg3).src=heartVide
         } 
 
         await delay(1);
@@ -113,9 +113,9 @@ const FightCharacterList = () => {
     }
 
     if (fighter1.speed>fighter2.speed) {
-      fightStart(fighter1, fighter1.stamina, setLive1, fighter2, fighter2.stamina, setLive2);
+      fightStart(fighter1, fighter1.stamina, setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, fighter2.stamina, setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
     } else {
-      fightStart(fighter2, fighter2.stamina, setLive2, fighter1, fighter1.stamina, setLive1);
+      fightStart(fighter2, fighter2.stamina, setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, fighter1.stamina, setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
     }
   }
 
