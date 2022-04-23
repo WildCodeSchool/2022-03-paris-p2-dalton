@@ -2,13 +2,9 @@
 .characterList {
     width: 100vw;
     margin: auto;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
-/*
-.characterList-title {
-    text-align: center;
-}
-*/
+
 .cards-container {
     display:  flex;
     justify-content: space-between;
@@ -19,7 +15,6 @@
 .pageFight {
     background-color: #3A3A3A;
     color: white;
-    --colorFigth: #166BF8;
     --fontFight: Roboto Condensed bold 1rem; text-transform: uppercase;
     font-family: var( --fontFight);
 }
@@ -42,12 +37,24 @@
     gap: 1rem;
 }
 
+.container-select-hero {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .fighter1, .fighter2 {
     height:  15.25rem;
     width: 11.8rem;
-    background-color: var( --colorFigth);
+    background-color: var( --primary-color);
     margin-bottom: 1rem;
     border-radius: 10px;
+}
+
+.container-fighterImg {
+    height:158px;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .imgFighter1, .imgFighter2 { 
@@ -97,7 +104,7 @@
     font-family: var( --fontFight);
     margin-bottom: 1rem;
     border-radius: 10rem;
-    background-color: var( --colorFigth);
+    background-color: var( --primary-color);
     color: white;
 }
 
@@ -107,6 +114,10 @@
         width: 18rem;
     }
     
+    .container-fighterImg {
+        height:16rem;
+    }
+
     .imgFighter1, .imgFighter2 {
         height: 16rem;
         width: 18rem;

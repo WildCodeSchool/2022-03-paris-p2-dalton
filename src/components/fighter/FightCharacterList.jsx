@@ -6,9 +6,17 @@ import heart from '../../assets/images/heart_full.svg'
 import heartVide from '../../assets/images/heart_empty.svg'
 
 const FightCharacterList = () => {
-  const [characters, setCharacters] = useState([]);
-  const [fighter1, setFighter1] =useState({});
-  const [fighter2, setFighter2] =useState({});
+  const [characters, setCharacters] = useState([])
+
+  const [fighter1, setFighter1] =useState({})
+  const [isVisibleH2Fighter1, setIsVisibleH2Fighter1] = useState(true)
+  const [isVisibleImgFighter1, setIsVisibleImgFighter1] = useState(false)
+
+  const [fighter2, setFighter2] =useState({})
+  const [isVisibleH2Fighter2, setIsVisibleH2Fighter2] = useState(true)
+  const [isVisibleImgFighter2, setIsVisibleImgFighter2] = useState(false)
+
+
   const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
   useEffect(() => {
@@ -21,10 +29,15 @@ const FightCharacterList = () => {
   // on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
   const getID = (e) => {
     //console.log(e.currentTarget.id);
-    if (fighter1.id>-1) {
+
+    if (fighter1.id>-1) {      
+      setIsVisibleH2Fighter2(false)
       setFighter2(characters[e.currentTarget.id])   
+      setIsVisibleImgFighter2(true);
     } else {
+      setIsVisibleH2Fighter1(false)
       setFighter1(characters[e.currentTarget.id])
+      setIsVisibleImgFighter1(true);
     }
   }
 
@@ -95,7 +108,6 @@ const FightCharacterList = () => {
     }
   }
 
-
   return (
     <div>
       <div className="characterList">
@@ -106,9 +118,21 @@ const FightCharacterList = () => {
               ))}
           </div>
       </div>
+      <div className="container-select-hero">
+        {isVisibleH2Fighter1 &&
+          <h1>Select hero 1</h1>
+        }  
+        {isVisibleH2Fighter2 &&
+          <h1>Select hero 2</h1>
+        }  
+      </div>
       <div className="fighters">
         <div className="fighter1 selected">
-          <img className="imgFighter1 selected" src={fighter1.image} alt="name" />
+          <div className="container-fighterImg">
+          {isVisibleImgFighter1 &&
+            <img className="imgFighter1 selected" src={fighter1.image}  alt="name" /> 
+          }  
+          </div>
           <div className="midleBlock"></div>
           <div className="fighter1Info">
             <h4>{fighter1.name}</h4>
@@ -124,7 +148,11 @@ const FightCharacterList = () => {
           </div>
         </div>
         <div className="fighter2 selected">
-          <img className="imgFighter2 selected" src={fighter2.image} alt="name" />
+          <div className="container-fighterImg">
+          {isVisibleImgFighter2 &&  
+            <img className="imgFighter2 selected" src={fighter2.image} alt="name" />
+          }
+          </div>
           <div className="midleBlock"></div>
           <div className="fighter2Info">
             <h4>{fighter2.name}</h4>
