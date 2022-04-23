@@ -12,6 +12,7 @@ import soundPain4 from '../../assets/sons/FGHTBf_Chute de corps 3 (ID 2454)_LS.w
 import soundPain5 from '../../assets/sons/FGHTImpt_Coup de poing 6 (ID 2461)_LS.wav'
 import soundPain6 from '../../assets/sons/HMNHart_Battement de coeur 1 (ID 0243)_LS.wav'
 import soundDead from '../../assets/sons/haharir.mp3'
+import soundApplause from '../../assets/sons/CRWDCheer_Applaudissements concert bar 1 (ID 2479)_LS.wav'
 
 const cris = [soundPain1,soundPain2,soundPain3,soundPain4,soundPain5,soundPain6]
 
@@ -19,12 +20,14 @@ const FightCharacterList = () => {
   const [characters, setCharacters] = useState([])
 
   const [fighter1, setFighter1] =useState({})
-  const [isVisibleH2Fighter1, setIsVisibleH2Fighter1] = useState(true)
+  const [isVisibleH1Fighter1, setIsVisibleH1Fighter1] = useState(true)
   const [isVisibleImgFighter1, setIsVisibleImgFighter1] = useState(false)
 
   const [fighter2, setFighter2] =useState({})
-  const [isVisibleH2Fighter2, setIsVisibleH2Fighter2] = useState(true)
+  const [isVisibleH1Fighter2, setIsVisibleH1Fighter2] = useState(true)
   const [isVisibleImgFighter2, setIsVisibleImgFighter2] = useState(false)
+
+  const [isVisibleWinner, setIsVisibleWinner] = useState(false)
 
   const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
@@ -40,11 +43,11 @@ const FightCharacterList = () => {
     //console.log(e.currentTarget.id);
 
     if (fighter1.id>-1) {      
-      setIsVisibleH2Fighter2(false)
+      setIsVisibleH1Fighter2(false)
       setFighter2(characters[e.currentTarget.id])   
       setIsVisibleImgFighter2(true);
     } else {
-      setIsVisibleH2Fighter1(false)
+      setIsVisibleH1Fighter1(false)
       setFighter1(characters[e.currentTarget.id])
       setIsVisibleImgFighter1(true);
     }
@@ -53,6 +56,7 @@ const FightCharacterList = () => {
   const [live1, setLive1] = useState(fighter1.stamina);
   const [live2, setLive2] = useState(fighter2.stamina);
 
+  
   const fight = () => {
 
     let damage;
@@ -69,7 +73,7 @@ const FightCharacterList = () => {
 
     damage = getRandomInt(fighter1.force/10);
 
-    const fightStart = async (fighterA, liveA, imgFighterA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, liveB, imgFighterB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
+    const fightStart = async (fighterA, idFighterA, liveA, imgFighterA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, idFighterB, liveB, imgFighterB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
 
       while (liveA>0 && liveB>0) {
         let audio = new Audio(cris[getRandomInt(5)]);
@@ -90,25 +94,23 @@ const FightCharacterList = () => {
           document.getElementById(idHeartBImg3).src=heartVide
         }
 
-        if (liveB<=0) {
-          break;
+        if (liveB>0) {
+          damage = getRandomInt(fighterB.force/10)
+          liveA=liveA-damage
+          setLiveA(liveA) 
+          audio.play();
+  
+          if (liveA<=0) {
+            document.getElementById(idHeartAImg1).src=heartVide
+          } else
+          if (liveA<(parseInt(fighterA.stamina)/3)) {
+            document.getElementById(idHeartAImg2).src=heartVide
+          } else
+          if (liveA<(parseInt(fighterA.stamina)*2/3)) {
+            document.getElementById(idHeartAImg3).src=heartVide
+          } 
         }
         
-        damage = getRandomInt(fighterB.force/10)
-        liveA=liveA-damage
-        setLiveA(liveA) 
-        audio.play();
-
-        if (liveA<=0) {
-          document.getElementById(idHeartAImg1).src=heartVide
-        } else
-        if (liveA<(parseInt(fighterA.stamina)/3)) {
-          document.getElementById(idHeartAImg2).src=heartVide
-        } else
-        if (liveA<(parseInt(fighterA.stamina)*2/3)) {
-          document.getElementById(idHeartAImg3).src=heartVide
-        } 
-
         await delay(1);
 
         // Display Dead head with laugh
@@ -116,35 +118,34 @@ const FightCharacterList = () => {
           if (liveA<=0) {
             document.getElementById(imgFighterA).src=deadHead
           } else
-          if (liveB<=0) {
+          {
             document.getElementById(imgFighterB).src=deadHead
           } 
 
           let audioDead = new Audio(soundDead);
           audioDead.play();
           await delay(5);
+
+          // Winner management
+          if (liveA<=0) {
+            const element =document.getElementById(idFighterA)
+            element.remove()
+          } else {
+            const element =document.getElementById(idFighterB)
+            element.remove()
+          }
+
+          let audioApplause = new Audio(soundApplause);
+          audioApplause.play();
+          setIsVisibleWinner(true)
         }
-      }
-
-      // Winner management
-      // Ne marche pas pour l'instant...
-
-      if (liveA<=0) {
-        document.getElementById(fighterA).remove()
-        document.getElementById(fighterA).removeChild()
-        document.getElementById(fighterA).style.display="none"
-
-      } else {
-        document.getElementById(fighterB).remove()
-        document.getElementById(fighterB).removeChild()
-        document.getElementById(fighterB).style.display="none"
       }
     }
 
     if (fighter1.speed>fighter2.speed) {
-      fightStart(fighter1, fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
+      fightStart(fighter1, "fighter1", fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, "fighter2", fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
     } else {
-      fightStart(fighter2, fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
+      fightStart(fighter2, "fighter2", fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, "fighter1", fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
     }
   }
 
@@ -161,11 +162,14 @@ const FightCharacterList = () => {
           </div>
       </div>
       <div className="container-select-hero">
-        {isVisibleH2Fighter1 &&
+        {isVisibleH1Fighter1 &&
           <h1>Select hero 1</h1>
         }  
-        {isVisibleH2Fighter2 &&
+        {isVisibleH1Fighter2 &&
           <h1>Select hero 2</h1>
+        }  
+        {isVisibleWinner &&
+          <h1>Winner</h1>
         }  
       </div>
       <div className="fighters">
