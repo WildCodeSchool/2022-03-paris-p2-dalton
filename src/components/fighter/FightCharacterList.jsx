@@ -85,9 +85,7 @@ const FightCharacterList = () => {
         }
 
         await delay(1);
-
       }
-      return true;
     }
 
     if (fighter1.speed>fighter2.speed) {
@@ -117,7 +115,7 @@ const FightCharacterList = () => {
             <h5>Strenght : {fighter1.force}</h5>
             <h5>Stamina : {fighter1.stamina}</h5>
             <h5>Speed : {fighter1.speed}</h5>
-            <h5>Vie : {live1}</h5>
+            <h5>Live : {live1}</h5>
           <div className="heart selected">
               <img className="imgHeart imgHeart1Fighter1" src={heart} alt="Coeur" />
               <img className="imgHeart imgHeart2Fighter1" src={heart} alt="Coeur" />
@@ -133,7 +131,7 @@ const FightCharacterList = () => {
             <h5>Strenght : {fighter2.force}</h5>
             <h5>Stamina : {fighter2.stamina}</h5>
             <h5>Speed : {fighter2.speed}</h5>
-            <h5>Vie : {live2}</h5>
+            <h5>Live : {live2}</h5>
             <div className="heart selected">
               <img className="imgHeart imgHeart1Fighter2" src={heart} alt="Coeur" />
               <img className="imgHeart imgHeart2Fighter2" src={heart} alt="Coeur" />
