@@ -138,6 +138,9 @@ const FightCharacterList = () => {
           let audioApplause = new Audio(soundApplause);
           audioApplause.play();
           setIsVisibleWinner(true)
+
+          await delay(6);
+          window.location = window.location
         }
       }
     }
