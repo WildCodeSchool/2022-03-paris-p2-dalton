@@ -6,7 +6,6 @@ import Heroes from "./pages/heroes/Heroes.jsx";
 import Fight from "./pages/fight/Fight.jsx";
 import Match from "./pages/match/Match.jsx";
 import Shop from "./pages/shop/Shop.jsx";
-import CharacterDetails from "./data/CharacterDetails";
 
 function App() {
   return (
@@ -18,8 +17,6 @@ function App() {
         <Route path="fight" element={<Fight />} />
         <Route path="match" element={<Match />} />
         <Route path="Shop" element={<Shop /> } />
-        {/*            <Route path="/character/:id/fight" element={<CharacterDetails />} />*/}
-       {/* <Route path="/:id/fight" /> */}
       </Routes>
     </div>
   );

@@ -7,11 +7,8 @@ import heartVide from '../assets/images/heart_empty.svg'
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
- // const [fighters, setFighters] =useState([{},{}]);
-  const [fighters, setFighters] =useState([[],[]]);
-  const [fighter1ID, setFighter1ID] =useState(0);
   const [fighter1, setFighter1] =useState({});
-  //const [fighter1, setFighter1] =useState({});
+  const [fighter2, setFighter2] =useState({});
   const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
   useEffect(() => {
@@ -24,10 +21,12 @@ const CharacterList = () => {
 
   // on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
   const getID = (e) => {
-    console.log(e.currentTarget.id);
-    setFighter1ID(e.currentTarget.id)
-    setFighter1(characters[e.currentTarget.id])
-
+    //console.log(e.currentTarget.id);
+    if (fighter1.id>-1) {
+      setFighter2(characters[e.currentTarget.id])   
+    } else {
+      setFighter1(characters[e.currentTarget.id])
+    }
   }
 
   return (
@@ -36,23 +35,21 @@ const CharacterList = () => {
           <div className='cards-container'>
               { characters &&
               characters.map((character) => (
-                <Character key={character.id} getID={getID} character={character} fighters={fighters} setFighters={setFighters} fighter1={fighter1} setFighter1={setFighter1}/>
+                <Character character={character} key={character.id} getID={getID} />
               ))}
           </div>
       </div>
       <div className="fighters">
         <div className="fighter1 selected">
           <div className="image">
-       {/*     <img className="imgFighter1 selected" src={fighters[0].image} alt="name" />*/}
             <img className="imgFighter1 selected" src={fighter1.image} alt="name" />
           </div>
           <div className="midleBlock"></div>
           <div className="fighter1Info">
-          {/*  <h4>{fighters[0].name}</h4>*/}
             <h4>{fighter1.name}</h4>
-            <h5>Strenght : {fighters[0].force}</h5>
-            <h5>Stamina : {fighters[0].stamina}</h5>
-            <h5>Speed : {fighters[0].speed}</h5>
+            <h5>Strenght : {fighter1.force}</h5>
+            <h5>Stamina : {fighter1.stamina}</h5>
+            <h5>Speed : {fighter1.speed}</h5>
             <div className="heart selected">
               <img className="imgHeart imgHeart1Fighter1" src={heartVide} alt="Coeur" />
               <img className="imgHeart imgHeart2Fighter1" src={heartVide} alt="Coeur" />
@@ -62,14 +59,14 @@ const CharacterList = () => {
         </div>
         <div className="fighter2 selected">
           <div className="image">
-            <img className="imgFighter2 selected" src={fighters[1].image} alt="name" />
+            <img className="imgFighter2 selected" src={fighter2.image} alt="name" />
           </div>
           <div className="midleBlock"></div>
           <div className="fighter2Info">
-            <h4>{fighters[1].name}</h4>
-            <h5>Strenght : {fighters[1].force}</h5>
-            <h5>Stamina : {fighters[1].stamina}</h5>
-            <h5>Speed : {fighters[1].speed}</h5>
+            <h4>{fighter2.name}</h4>
+            <h5>Strenght : {fighter2.force}</h5>
+            <h5>Stamina : {fighter2.stamina}</h5>
+            <h5>Speed : {fighter2.speed}</h5>
             <div className="heart selected">
               <img className="imgHeart imgHeart1Fighter2" src={heart} alt="CoeurVide" />
               <img className="imgHeart imgHeart2Fighter2" src={heart} alt="CoeurVide" />
