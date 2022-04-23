@@ -43,7 +43,7 @@
     gap: 1rem;
 }
 
-.fighter1, .fighter2 {
+#fighter1, #fighter2 {
     height:  15.25rem;
     width: 11.8rem;
     background-color: var( --primary-color);
@@ -57,7 +57,7 @@
     border-radius: 10px 10px 0px 0px;
 }
 
-.imgFighter1, .imgFighter2 { 
+#imgFighter1, #imgFighter2 { 
     height:158px;
     /*width: 11.8rem;*/
     border-radius: 10px 10px 0px 0px;
@@ -109,7 +109,7 @@
 }
 
 @media screen and (min-width:361px) { 
-    .fighter1, .fighter2 {
+    #fighter1, #fighter2 {
         height: 18.75rem;
         width: 18rem;
     }
@@ -118,7 +118,7 @@
         height:16rem;
     }
 
-    .imgFighter1, .imgFighter2 {
+    #imgFighter1, #imgFighter2 {
         height: 16rem;
         width: 18rem;
     }  

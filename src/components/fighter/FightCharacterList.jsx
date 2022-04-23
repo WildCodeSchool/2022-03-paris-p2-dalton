@@ -4,14 +4,16 @@ import FightCharacter from './FightCharacter';
 import "./FightCharacterList.css"
 import heart from '../../assets/images/heart_full.svg'
 import heartVide from '../../assets/images/heart_empty.svg'
-import sonDouleur1 from '../../assets/sons/male/VOXEfrt_Cri de douleur (ID 2361)_LS.wav'
-import sonDouleur2 from '../../assets/sons/male/VOXScrm_Cri wilhelm (ID 0477)_LS.wav'
-import sonDouleur3 from '../../assets/sons/FGHTBf_Chute de corps 1 (ID 2452)_LS.wav'
-import sonDouleur4 from '../../assets/sons/FGHTBf_Chute de corps 3 (ID 2454)_LS.wav'
-import sonDouleur5 from '../../assets/sons/FGHTImpt_Coup de poing 6 (ID 2461)_LS.wav'
-import sonDouleur6 from '../../assets/sons/HMNHart_Battement de coeur 1 (ID 0243)_LS.wav'
+import deadHead from '../../assets/images/cross-296395__340.webp'
+import soundPain1 from '../../assets/sons/male/VOXEfrt_Cri de douleur (ID 2361)_LS.wav'
+import soundPain2 from '../../assets/sons/male/VOXScrm_Cri wilhelm (ID 0477)_LS.wav'
+import soundPain3 from '../../assets/sons/FGHTBf_Chute de corps 1 (ID 2452)_LS.wav'
+import soundPain4 from '../../assets/sons/FGHTBf_Chute de corps 3 (ID 2454)_LS.wav'
+import soundPain5 from '../../assets/sons/FGHTImpt_Coup de poing 6 (ID 2461)_LS.wav'
+import soundPain6 from '../../assets/sons/HMNHart_Battement de coeur 1 (ID 0243)_LS.wav'
+import soundDead from '../../assets/sons/haharir.mp3'
 
-const cris = [sonDouleur1,sonDouleur2,sonDouleur3,sonDouleur4,sonDouleur5,sonDouleur6]
+const cris = [soundPain1,soundPain2,soundPain3,soundPain4,soundPain5,soundPain6]
 
 const FightCharacterList = () => {
   const [characters, setCharacters] = useState([])
@@ -51,9 +53,10 @@ const FightCharacterList = () => {
   const [live1, setLive1] = useState(fighter1.stamina);
   const [live2, setLive2] = useState(fighter2.stamina);
 
-  let damage;
-
   const fight = () => {
+
+    let damage;
+
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);
     }
@@ -66,7 +69,7 @@ const FightCharacterList = () => {
 
     damage = getRandomInt(fighter1.force/10);
 
-     const fightStart = async (fighterA, liveA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, liveB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
+    const fightStart = async (fighterA, liveA, imgFighterA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, liveB, imgFighterB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
 
       while (liveA>0 && liveB>0) {
         let audio = new Audio(cris[getRandomInt(5)]);
@@ -76,7 +79,7 @@ const FightCharacterList = () => {
         setLiveB(liveB) 
 
         audio.play();
-  
+
         if (liveB<=0) {
           document.getElementById(idHeartBImg1).src=heartVide
         }  else
@@ -91,8 +94,6 @@ const FightCharacterList = () => {
           break;
         }
         
-      //  let audio = new Audio(cris[Math.floor(Math.random())]);
-
         damage = getRandomInt(fighterB.force/10)
         liveA=liveA-damage
         setLiveA(liveA) 
@@ -109,15 +110,45 @@ const FightCharacterList = () => {
         } 
 
         await delay(1);
+
+        // Display Dead head with laugh
+        if ((liveA<=0) || (liveB<=0)) {
+          if (liveA<=0) {
+            document.getElementById(imgFighterA).src=deadHead
+          } else
+          if (liveB<=0) {
+            document.getElementById(imgFighterB).src=deadHead
+          } 
+
+          let audioDead = new Audio(soundDead);
+          audioDead.play();
+          await delay(5);
+        }
+      }
+
+      // Winner management
+      // Ne marche pas pour l'instant...
+
+      if (liveA<=0) {
+        document.getElementById(fighterA).remove()
+        document.getElementById(fighterA).removeChild()
+        document.getElementById(fighterA).style.display="none"
+
+      } else {
+        document.getElementById(fighterB).remove()
+        document.getElementById(fighterB).removeChild()
+        document.getElementById(fighterB).style.display="none"
       }
     }
 
     if (fighter1.speed>fighter2.speed) {
-      fightStart(fighter1, fighter1.stamina, setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, fighter2.stamina, setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
+      fightStart(fighter1, fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
     } else {
-      fightStart(fighter2, fighter2.stamina, setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, fighter1.stamina, setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
+      fightStart(fighter2, fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
     }
   }
+
+
 
   return (
     <div>
@@ -138,10 +169,10 @@ const FightCharacterList = () => {
         }  
       </div>
       <div className="fighters">
-        <div className="fighter1 selected">
+        <div id="fighter1">
           <div className="container-fighterImg">
           {isVisibleImgFighter1 &&
-            <img className="imgFighter1 selected" src={fighter1.image}  alt="name" /> 
+            <img id="imgFighter1" src={fighter1.image}  alt="name" /> 
           }  
           </div>
           <div className="midleBlock"></div>
@@ -151,17 +182,17 @@ const FightCharacterList = () => {
             <h5>Stamina : {fighter1.stamina}</h5>
             <h5>Speed : {fighter1.speed}</h5>
             <h5>Live : {live1}</h5>
-          <div className="heart selected">
+          <div className="heart">
               <img id="imgHeart1Fighter1" src={heart} alt="Coeur" />
               <img id="imgHeart2Fighter1" src={heart} alt="Coeur" />
               <img id="imgHeart3Fighter1" src={heart} alt="Coeur" />
             </div>
           </div>
         </div>
-        <div className="fighter2 selected">
+        <div id="fighter2">
           <div className="container-fighterImg">
           {isVisibleImgFighter2 &&  
-            <img className="imgFighter2 selected" src={fighter2.image} alt="name" />
+            <img id="imgFighter2" src={fighter2.image} alt="name" />
           }
           </div>
           <div className="midleBlock"></div>
@@ -171,7 +202,7 @@ const FightCharacterList = () => {
             <h5>Stamina : {fighter2.stamina}</h5>
             <h5>Speed : {fighter2.speed}</h5>
             <h5>Live : {live2}</h5>
-            <div className="heart selected">
+            <div className="heart">
               <img id="imgHeart1Fighter2" src={heart} alt="Coeur" />
               <img id="imgHeart2Fighter2" src={heart} alt="Coeur" />
               <img id="imgHeart3Fighter2" src={heart} alt="Coeur" />
