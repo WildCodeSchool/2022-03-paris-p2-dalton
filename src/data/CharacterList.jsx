@@ -9,7 +9,8 @@ const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
  // const [fighters, setFighters] =useState([{},{}]);
   const [fighters, setFighters] =useState([[],[]]);
-  const [fighter1, setFighter1] =useState([]);
+  const [fighter1ID, setFighter1ID] =useState(0);
+  const [fighter1, setFighter1] =useState({});
   //const [fighter1, setFighter1] =useState({});
   const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
@@ -24,9 +25,10 @@ const CharacterList = () => {
   // on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
   const getID = (e) => {
     console.log(e.currentTarget.id);
-    setFighter1(e.currentTarget.id)
+    setFighter1ID(e.currentTarget.id)
+    setFighter1(characters[e.currentTarget.id])
+
   }
-  
 
   return (
     <div>
