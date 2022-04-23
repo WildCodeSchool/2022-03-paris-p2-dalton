@@ -1,7 +1,7 @@
-import './Character.css';
+import './FightCharacter.css';
 
 // on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
-const Character = ({ character, getID } ) => {
+const FightCharacter = ({ character, getID } ) => {
 
 
   return (
@@ -18,4 +18,4 @@ const Character = ({ character, getID } ) => {
   )
 }
 
-export default Character
+export default FightCharacter

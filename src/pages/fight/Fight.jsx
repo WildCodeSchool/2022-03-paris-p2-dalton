@@ -1,4 +1,4 @@
-import CharacterList from "../../data/CharacterList.jsx";
+import CharacterList from "../../components/fighter/FightCharacterList.jsx";
 import './Fight.css';
 
 const Fight = () => {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Character from './Character';
-import "./CharacterList.css"
-import heart from '../assets/images/heart_full.svg'
-import heartVide from '../assets/images/heart_empty.svg'
+import FightCharacter from './FightCharacter';
+import "./FightCharacterList.css"
+import heart from '../../assets/images/heart_full.svg'
+import heartVide from '../../assets/images/heart_empty.svg'
 
-const CharacterList = () => {
+const FightCharacterList = () => {
   const [characters, setCharacters] = useState([]);
   const [fighter1, setFighter1] =useState({});
   const [fighter2, setFighter2] =useState({});
@@ -104,7 +104,7 @@ const CharacterList = () => {
           <div className='cards-container'>
               { characters &&
               characters.map((character) => (
-                <Character character={character} key={character.id} getID={getID} />
+                <FightCharacter character={character} key={character.id} getID={getID} />
               ))}
           </div>
       </div>
@@ -149,4 +149,4 @@ const CharacterList = () => {
   )
 };
 
-export default CharacterList
+export default FightCharacterList
