@@ -71,8 +71,6 @@ const FightCharacterList = () => {
       });
     }
 
-    damage = getRandomInt(fighter1.force/10);
-
     const fightStart = async (fighterA, idFighterA, liveA, imgFighterA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, idFighterB, liveB, imgFighterB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
 
       while (liveA>0 && liveB>0) {
@@ -82,8 +80,8 @@ const FightCharacterList = () => {
         liveB=liveB-damage
         setLiveB(liveB) 
 
+        // Fighter A attack
         audio.play();
-
         if (liveB<=0) {
           document.getElementById(idHeartBImg1).src=heartVide
         }  else
@@ -94,6 +92,7 @@ const FightCharacterList = () => {
           document.getElementById(idHeartBImg3).src=heartVide
         }
 
+        // Fighter B attack
         if (liveB>0) {
           damage = getRandomInt(fighterB.force/10)
           liveA=liveA-damage
