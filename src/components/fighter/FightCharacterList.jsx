@@ -140,7 +140,8 @@ const FightCharacterList = () => {
           setIsVisibleWinner(true)
 
           await delay(6);
-          window.location = window.location
+        //  window.location = window.location
+          window.top.location = window.top.location
         }
       }
     }
