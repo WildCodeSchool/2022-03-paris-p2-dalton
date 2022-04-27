@@ -1,25 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './Shopping.css';
 
-const Shopping = ({ shopping}) => {
+const Shopping = ({ shopping }) => {
+    const [count, setCount] = useState('');
+    const [price, setPrice] = useState(0);
+    
+    useEffect(() => {
+        const myPrice = () => {
+            let randomPrice = Math.floor(Math.random() * (20 - 10) + 10);
+            return setPrice(randomPrice)
+        };
+        myPrice()
+    }, [])
+    
+
   return (
-    <div className='whs-cards'>
-        <div>
-            {/* <Link to={{ pathname: `/shopping/${shopping.id}`}}>
-                <img className='whs-cards-images' src={shopping.image} alt={shopping.name} />
-            </Link> */}
+    <div className='main-container-cards'>
+    <ul className='whs-cards'>
+        <li>
             <img className='whs-cards-images' src={shopping.image} alt={shopping.name} />
             <div>
                 <span>{shopping.name}</span>
             </div>
             <div>
-                <span>{shopping.race}</span>
+                <span>Price: {price}</span>
             </div>
             <div>
-                <span>Price</span>
+            <button className='btn-add' type='button' onClick={() => setCount((count) => parseInt(count + 1))}>Add to bag {count}
+            </button>
+            <button className='btn-reset' type='button' onClick={() => setCount('')}>reset</button>
             </div>
-        </div>
+        </li>
+    </ul>
     </div>
   )
 }
