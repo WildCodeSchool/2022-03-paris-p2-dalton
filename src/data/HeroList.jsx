@@ -5,7 +5,7 @@ import Hero from "../components/hero/Hero";
 const HeroList = () => {
   const [heroes, setHeroes] = useState([]);
 
-  const url = "https://lit-badlands-40023.herokuapp.com/heros";
+  const url = "http://localhost:8000/api/heroes";
 
   useEffect(() => {
     axios

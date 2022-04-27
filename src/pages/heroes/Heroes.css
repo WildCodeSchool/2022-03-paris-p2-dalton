@@ -1,3 +1,75 @@
 .container-body {
   background-color: #e5e5e5;
 }
+input {
+  display: block;
+  background-color: transparent;
+  height: 2rem;
+  width: 328px;
+  margin-top: 3rem;
+  border: none;
+  color: #161414;
+  padding-left: 1rem;
+  border-bottom: 1px solid #166bf8;
+}
+
+.container-input {
+  padding: 5rem 0rem 5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-banner {
+  background-image: url("../../assets/images/captain.png");
+  height: 280px;
+  width: 1000px;
+  border-style: none;
+}
+
+.img-heroes {
+  width: 11.8rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  margin-bottom: 0rem;
+  display: flex;
+  transition: transform 0.5s;
+}
+
+.img-heroes:hover {
+  transform: scale(1.5);
+}
+
+.container-img {
+  overflow: hidden;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.container_hero {
+  height: 118px;
+  width: 11.8rem;
+  background-color: #161414;
+  color: white;
+  border-radius: 0rem 0rem 1rem 1rem;
+  padding: 1rem;
+  margin-top: 0rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.border_blue {
+  background-color: #166bf8;
+  height: 0.8rem;
+}
+
+.container_heroes {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-top: 8rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
