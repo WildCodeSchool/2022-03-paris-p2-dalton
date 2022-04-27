@@ -5,14 +5,22 @@ input {
   width: 328px;
   margin-top: 3rem;
   border: none;
+  color: #161414;
+  padding-left: 1rem;
   border-bottom: 1px solid #166bf8;
 }
 
 .container-input {
-  background-color: #161414;
   padding: 5rem 0rem 5rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.img-banner {
+  background-image: url("../../assets/images/captain.png");
+  height: 280px;
+  width: 1000px;
+  border-style: none;
 }
