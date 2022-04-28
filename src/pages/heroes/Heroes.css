@@ -1,6 +1,55 @@
 .container-body {
-  background-color: #e5e5e5;
+  background: linear-gradient(180deg, #000000 9.34%, #3a3a3a 85.46%);
 }
+
+.img-heroes {
+  width: 11.8rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  margin-bottom: 0rem;
+  display: flex;
+  transition: transform 0.5s;
+  border: 1px solid #166bf8;
+}
+
+.img-heroes:hover {
+  transform: scale(1.5);
+}
+
+.container-img {
+  overflow: hidden;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.container-heroes {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  margin-right: 0rem;
+}
+
+.container_hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 118px;
+  width: 11.8rem;
+  background-color: #161414;
+  color: white;
+  border-radius: 0rem 0rem 1rem 1rem;
+  padding: 1rem;
+  margin-top: 0rem;
+  border: 1px solid #166bf8;
+}
+
+.border_blue {
+  background-color: #166bf8;
+  width: 11.8rem;
+  height: 0.8rem;
+}
+
 input {
   display: block;
   background-color: transparent;
@@ -8,8 +57,13 @@ input {
   width: 328px;
   margin-top: 3rem;
   border: none;
-  color: #161414;
+  color: white;
   padding-left: 1rem;
+  border-bottom: 1px solid #166bf8;
+}
+input:focus {
+  border: none;
+  outline: none;
   border-bottom: 1px solid #166bf8;
 }
 
@@ -22,54 +76,8 @@ input {
 }
 
 .img-banner {
-  background-image: url("../../assets/images/captain.png");
-  height: 280px;
-  width: 1000px;
-  border-style: none;
-}
-
-.img-heroes {
-  width: 11.8rem;
-  border-radius: 1rem 1rem 0rem 0rem;
-  margin-bottom: 0rem;
-  display: flex;
-  transition: transform 0.5s;
-}
-
-.img-heroes:hover {
-  transform: scale(1.5);
-}
-
-.container-img {
-  overflow: hidden;
-  border-radius: 1rem 1rem 0rem 0rem;
-}
-
-.container_hero {
-  height: 118px;
-  width: 11.8rem;
-  background-color: #161414;
-  color: white;
-  border-radius: 0rem 0rem 1rem 1rem;
-  padding: 1rem;
-  margin-top: 0rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.border_blue {
-  background-color: #166bf8;
-  height: 0.8rem;
-}
-
-.container_heroes {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  padding-top: 8rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
+  background-image: url(../../assets/images/captain.png);
+  background-position: center;
+  background-size: cover;
+  height: 300px;
 }
