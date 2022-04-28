@@ -6,6 +6,7 @@ import "./LoveCharactersList.css";
 import"./LoveCharactersList.scss";
 import heart_blue from "../../assets/images/heart_blue.svg";
 // import deux images ??? depuis assets
+// import question_mark_blue from "../../assets/images/question_mark_blue.svg";
 
 
 
@@ -56,7 +57,6 @@ const LoveCharactersList = () => {
   return (
     <div className="LoveCharactersList">
       <div className="title">
-        {/* <img src={arrow} alt="" /> */}
         <h2 className="LoveCharactersList-title">Love is just a click away !</h2>
         </div>
         <div className='love-cards-container'>
