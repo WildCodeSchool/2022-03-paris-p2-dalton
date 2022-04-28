@@ -5,6 +5,11 @@ import "./FightCharacterList.css"
 import heart from '../../assets/images/heart_full.svg'
 import heartVide from '../../assets/images/heart_empty.svg'
 import deadHead from '../../assets/images/cross-296395__340.webp'
+import stef from "../../assets/images/steph.jpeg"
+import marie from "../../assets/images/marie_toon.jpg"
+import vaishnavi from "../../assets/images/vaishnavi_projet2.jpeg"
+import eric from "../../assets/images/eric2.jpg"
+import splash from "../../assets/images/comic-book-speech-bubble-splash.png"
 import soundPain1 from '../../assets/sons/male/VOXEfrt_Cri de douleur (ID 2361)_LS.wav'
 import soundPain2 from '../../assets/sons/male/VOXScrm_Cri wilhelm (ID 0477)_LS.wav'
 import soundPain3 from '../../assets/sons/FGHTBf_Chute de corps 1 (ID 2452)_LS.wav'
@@ -14,10 +19,14 @@ import soundPain6 from '../../assets/sons/HMNHart_Battement de coeur 1 (ID 0243)
 import soundDead from '../../assets/sons/haharir.mp3'
 import soundApplause from '../../assets/sons/CRWDCheer_Applaudissements concert bar 1 (ID 2479)_LS.wav'
 
-const cris = [soundPain1,soundPain2,soundPain3,soundPain4,soundPain5,soundPain6]
 
 const FightCharacterList = () => {
+
+  // STATES
   const [characters, setCharacters] = useState([])
+
+  const [imgFighter1, setimgFighter1] = useState(true)
+  const [imgFighter2, setimgFighter2] = useState(true)
 
   const [fighter1, setFighter1] =useState({})
   const [isVisibleH1Fighter1, setIsVisibleH1Fighter1] = useState(true)
@@ -29,6 +38,8 @@ const FightCharacterList = () => {
 
   const [isVisibleWinner, setIsVisibleWinner] = useState(false)
 
+
+   // GESTION API
   const url = "https://lit-badlands-40023.herokuapp.com/heros/";
 
   useEffect(() => {
@@ -38,6 +49,18 @@ const FightCharacterList = () => {
         .then(data => setCharacters(data)) 
   }, []);
 
+
+  // GESTION CHANGEMENT D'IMAGE SUR CLIC
+  const changeImgFighter1 = () => {
+    setimgFighter1(!imgFighter1)
+  }
+
+  const changeImgFighter2 = () => {
+    setimgFighter2(!imgFighter2)
+  }
+
+
+  // FIGHT  
   // on passe la fonction getID en props afin d'isoler l'id de chacun des héros.
   const getID = (e) => {
     //console.log(e.currentTarget.id);
@@ -55,6 +78,8 @@ const FightCharacterList = () => {
 
   const [live1, setLive1] = useState(fighter1.stamina);
   const [live2, setLive2] = useState(fighter2.stamina);
+
+  const cris = [soundPain1,soundPain2,soundPain3,soundPain4,soundPain5,soundPain6]
 
   
   const fight = () => {
@@ -165,10 +190,10 @@ const FightCharacterList = () => {
       </div>
       <div className="container-select-hero">
         {isVisibleH1Fighter1 &&
-          <h1>Select hero 1</h1>
+          <h2>Select hero 1</h2>
         }  
         {isVisibleH1Fighter2 &&
-          <h1>Select hero 2</h1>
+          <h2>Select hero 2</h2>
         }  
         {isVisibleWinner &&
           <h1>Winner</h1>
@@ -178,12 +203,21 @@ const FightCharacterList = () => {
         <div id="fighter1">
           <div className="container-fighterImg">
           {isVisibleImgFighter1 &&
-            <img id="imgFighter1" src={fighter1.image}  alt="name" /> 
-          }  
+            <img id="imgFighter1" src={fighter1.image}  alt="imgFighter1" />
+            
+          }
+          {!isVisibleImgFighter1 &&
+            <img id="imgFighter1" onClick={changeImgFighter1}  src={( imgFighter1 ? stef : vaishnavi)} alt="imgFighter1" />
+          }
           </div>
           <div className="midleBlock"></div>
           <div className="fighter1Info">
-            <h4>{fighter1.name}</h4>
+            {isVisibleImgFighter1 &&
+              <h4>{fighter1.name}</h4>
+            }  
+            {!isVisibleImgFighter1 &&
+              <h4>{imgFighter1 ? "Stéphanie" : "Vaishnavi"}</h4>
+            }
             <h5>Strenght : {fighter1.force}</h5>
             <h5>Stamina : {fighter1.stamina}</h5>
             <h5>Speed : {fighter1.speed}</h5>
@@ -197,13 +231,21 @@ const FightCharacterList = () => {
         </div>
         <div id="fighter2">
           <div className="container-fighterImg">
-          {isVisibleImgFighter2 &&  
-            <img id="imgFighter2" src={fighter2.image} alt="name" />
-          }
+            {isVisibleImgFighter2 &&  
+              <img id="imgFighter2" src={fighter2.image} alt="imgFighter2" />
+            }
+            {!isVisibleImgFighter2 &&  
+            <img id="imgFighter2" onClick={changeImgFighter2} src={imgFighter2 ? marie : eric}  alt="imgFighter2" />
+            }
           </div>
           <div className="midleBlock"></div>
           <div className="fighter2Info">
-            <h4>{fighter2.name}</h4>
+           {isVisibleImgFighter2 &&
+              <h4>{fighter2.name}</h4>
+            }  
+            {!isVisibleImgFighter2 &&
+              <h4>{imgFighter2 ? "Marie" : "Eric"}</h4>
+            }
             <h5>Strenght : {fighter2.force}</h5>
             <h5>Stamina : {fighter2.stamina}</h5>
             <h5>Speed : {fighter2.speed}</h5>
