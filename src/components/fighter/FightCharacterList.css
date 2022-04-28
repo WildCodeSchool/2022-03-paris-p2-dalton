@@ -34,7 +34,7 @@
     margin-top: 1rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.6rem;
 }
 
 .container-select-hero {
@@ -59,12 +59,12 @@
 
 #imgFighter1, #imgFighter2 { 
     height:158px;
-    /*width: 11.8rem;*/
     border-radius: 10px 10px 0px 0px;
 }
 
 .midleBlock {
     height: 0.5rem;
+    background-color: var( --primary-color);
 }
 
 .fighter1Info, .fighter2Info {
@@ -77,6 +77,8 @@
 .fighter1Info h4, .fighter2Info h4 {
     padding-top: 0.2rem;
     margin-bottom: 0.2rem;
+    padding-top: 0.4rem;
+    margin-bottom: 0.4rem;
     text-align: center;
 }
 
@@ -89,12 +91,14 @@
     justify-content: center;
     gap: 1rem;
     margin-top: 0.6rem;
+    margin-top: 1.5rem;
 }
 
 .pannelButton {
+    height: 8rem;
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top:5rem;
     margin-bottom: 1rem;
 }
 
@@ -103,6 +107,7 @@
     width: 10rem;
     font-family: var( --fontFight);
     margin-bottom: 1rem;
+    margin-top: 1rem;
     border-radius: 10rem;
     background-color: var( --primary-color);
     color: white;
@@ -111,6 +116,7 @@
 @media screen and (min-width:361px) { 
     #fighter1, #fighter2 {
         height: 18.75rem;
+        height: 15.75rem;
         width: 18rem;
     }
     
@@ -123,11 +129,22 @@
         width: 18rem;
     }  
 
+    .midleBlock {
+        height: 0.5rem;
+        background-color: var( --primary-color);
+    }
+    
+
+    .fighter1Info, .fighter2Info {
+        height: 11rem;
+    }
+
     .fighter1Info h5, .fighter2Info h5 {
         margin-left: 6rem;
     }
     
     .pannelButton {
-        margin-top: 7rem;
+        height: 20rem;
+        margin-top: 12.5rem;
     }    
 }
