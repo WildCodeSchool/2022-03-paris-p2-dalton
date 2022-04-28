@@ -9,7 +9,7 @@ const Hero = ({ hero }) => {
         <div className="container-img">
           {" "}
           <Link to={{ pathname: `/hero/${hero.id}` }}>
-            <img className="img-heroes" src={hero.image} alt={hero.name} />
+            <img className="img-heroes" src={hero.picture} alt={hero.name} />
           </Link>
         </div>
 
