@@ -3,6 +3,26 @@ h2 {
     color: white;
 }
 
-p {
+h3 {
     color: white;
 }
+
+.cart {
+    color: white;
+}
+
+.btn-open-cart {
+        border: 0;
+        line-height: 2.5;
+        padding: 0 120px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 3px;
+        background-color: rgba(220, 0, 0, 1);
+    }
+    
+    .btn-open-cart:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
