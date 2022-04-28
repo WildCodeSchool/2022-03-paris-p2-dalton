@@ -43,17 +43,6 @@ const LoveCharactersList = () => {
     };
   }
 
-
-  // function randomLoveCharacter(){
-  //   let randomNumber;
-  //   let randomNumber2;
- 
-  //   randomNumber = Math.floor(Math.random() * 30);
-  //   randomNumber2 = Math.floor(Math.random() * 30);
-  //   setRandomN(randomNumber)
-  //   setRandomN2(randomNumber2)
-  // }
-
   return (
     <div className="LoveCharactersList">
       <div className="title">
