@@ -6,7 +6,6 @@ import Heroes from "./pages/heroes/Heroes.jsx";
 import Fight from "./pages/fight/Fight.jsx";
 import Match from "./pages/match/Match.jsx";
 import Shop from "./pages/shop/Shop.jsx";
-import CharacterDetails from "./data/CharacterDetails";
 
 function App() {
   return (

@@ -2,6 +2,7 @@
 .character-img {
     width: 10.8vh;
     height: 10.8vh;
+    cursor: pointer;
     object-fit: cover;
 }
 
