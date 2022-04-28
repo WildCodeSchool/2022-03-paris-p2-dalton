@@ -6,31 +6,13 @@ import "./Heroes.css";
 
 export default function () {
   const [query, setQuery] = useState("");
-  // ici c'est comme si on fetch/aller chercher nos superheroes
   const [searchResults, setSearchResults] = useState([]);
-
-  function imageRandom(plop) {
-    return;
-  }
-  // ici tu vas créer une fonction qui déclenche et stocke un randomNumber ->
-  // un nombre au hasard : maths floor maths random
-  // au chargement du composant
-
-  // dans la source de ton image tu auras l'image d'un héros précis grâce au nombre aléatoire généré
-  // searchResults[`$randomNumber`].picture
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/heroes/`)
       .then((res) => res.data)
-      // le data du dessus est le nom structurel de l'objet data reçu en réponse à la requête
-      // celui du dessous est le nommage de la variable, il vaut mieux conserver le nom data
       .then((data) => setSearchResults(data));
-    // .catch((err) => {
-    //   console.error(err.response.data);
-    // });
-    //afficher que le héro n'existe pas si l'utilisateur
-    //entre un héros qui n'est pas dans l'api
   }, [query]);
 
   return (
