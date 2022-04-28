@@ -6,6 +6,7 @@ import Heroes from "./pages/heroes/Heroes.jsx";
 import Fight from "./pages/fight/Fight.jsx";
 import Match from "./pages/match/Match.jsx";
 import Shop from "./pages/shop/Shop.jsx";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         {/*            <Route path="/character/:id/fight" element={<CharacterDetails />} />*/}
         {/* <Route path="/:id/fight" /> */}
       </Routes>
+      <Footer />
     </div>
   );
 }
