@@ -5,13 +5,16 @@ import LoveCharacter from './LoveCharacter';
 import "./LoveCharactersList.css";
 import"./LoveCharactersList.scss";
 import heart_blue from "../../assets/images/heart_blue.svg";
+// import deux images ??? depuis assets
 
 
 
 const LoveCharactersList = () => {
   const [loveCharacters, setLoveCharacters] = useState([]);
-  const [randomN, setRandomN] = useState(0);
-  const [randomN2, setRandomN2] = useState(0)
+  const [randomN, setRandomN] = useState(31);
+  const [randomN2, setRandomN2] = useState(32);
+  const [mysteryImage, setMysteryImage] = useState("https://media.istockphoto.com/photos/anonymous-woman-covering-face-with-paper-picture-id1054899222?k=20&m=1054899222&s=612x612&w=0&h=tpZrkzhICatsGj8mcky967vOvY1jtm_bu3LlRC5vOAU=");
+  // ici créer deux useState qui vont chacun prendre en valeur l'image importée
 
   const url = "http://localhost:8000/api/heroes";
 
@@ -19,9 +22,10 @@ const LoveCharactersList = () => {
     axios
       .get(url)
       .then((response) => response.data)
-      .then((data) => setLoveCharacters(data));
-  }, []);
+      .then((data) => setLoveCharacters(data))
+  }, [randomN, randomN2]);
 
+  console.log(randomN);
 
  // Mon tableau se nomme loveCharacters je veux afficher aléatoirement 2 lovecharacter
 
@@ -39,15 +43,16 @@ const LoveCharactersList = () => {
   // }
 
   function randomLoveCharacter(){
-    let randomNumber = 2;
-    let randomNumber2 = 1;
-    do{
-      randomNumber = Math.floor(Math.random() * 30);
+    let randomNumber;
+    let randomNumber2;
+ 
+    randomNumber = Math.floor(Math.random() * 30);
     randomNumber2 = Math.floor(Math.random() * 30);
-    setRandomN(randomNumber);
-    setRandomN2(randomNumber2);
-   }while(randomNumber === randomNumber2);
+    setRandomN(randomNumber)
+    setRandomN2(randomNumber2)
+
   }
+
   return (
     <div className="LoveCharactersList">
       <div className="title">
@@ -66,15 +71,17 @@ const LoveCharactersList = () => {
             <button className="button-match pulse" onClick={randomLoveCharacter}>LET’S MATCH !</button>
         </div> 
 
-         <div className="container-match-card">
+          <div className="container-match-card">
             <h1 className="title-match-card">it’s a match !</h1> 
             <img src ={heart_blue} alt="" />
              <div className="container-match-card-img">
-                <img className="picture-match-card img1" src = {loveCharacters[randomN].picture} alt={loveCharacters[randomN].name}/>
+                <img className="picture-match-card img1" src = { 
+                  randomN !== 31 ? loveCharacters[randomN].picture : mysteryImage} alt="img hero 1"/>
 
-              <img className="picture-match-card img2" src={loveCharacters[randomN2].picture} alt={loveCharacters[randomN2].name}/>
+              <img className="picture-match-card img2" src={
+                randomN2 !== 32 ? loveCharacters[randomN2].picture : mysteryImage} alt="img hero 2"/>
             </div>
-        </div>
+        </div> 
 
     </div>
 )
