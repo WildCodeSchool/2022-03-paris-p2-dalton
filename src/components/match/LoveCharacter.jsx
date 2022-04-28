@@ -7,7 +7,7 @@ const LoveCharacter = ({loveCharacter}) => {
         <div className='loveCharacter'>
             <div className='love-cards'>
                 <Link to={{ pathname: `/loveCharacter/${loveCharacter.id}`}}>
-                    <img className="loveCharacter-img" src={loveCharacter.image} alt={loveCharacter.name} />
+                    <img className="loveCharacter-img" src={loveCharacter.picture} alt={loveCharacter.name} />
                 </Link>
                 <div className='loveCharacter-content'>
                     <div className="loveCharacter-rectangle"></div>

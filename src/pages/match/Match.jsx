@@ -1,5 +1,5 @@
 import React from 'react'
-import LoveCharactersList from "../../data/LoveCharactersList";
+import LoveCharactersList from "../../components/match/LoveCharactersList.jsx";
 
 
 export const Match = ({loveCharacter}) => {

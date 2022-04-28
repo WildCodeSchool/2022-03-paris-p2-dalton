@@ -32,22 +32,21 @@ h3 {
   height: 9px;
   background: #166bf8;
 }
-.loveCharacter-text{
+.loveCharacter-text {
   background-color: #fff;
   border-radius: 0 0 1rem 1rem;
   font-family: "Roboto Condensed";
-
 }
 
 .loveCharacter-name {
   line-height: 1.172rem;
   font-size: 1rem;
   font-weight: 700;
-  color:#161414;
+  color: #161414;
   margin-left: 0.5rem;
 }
 .loveCharacter-item {
   margin-left: 0.5rem;
-  color:#161414;
+  color: #161414;
   font-size: 0.813rem;
 }
