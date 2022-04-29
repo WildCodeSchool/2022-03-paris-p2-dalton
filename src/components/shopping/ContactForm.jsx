@@ -11,23 +11,24 @@ const ContactForm = () => {
 
     function handleBlur() {
         if (!inputValue.includes('@')) {
-            alert("Attention, il n'y a pas d'@, ceci n'est pas une adresse valide")
+            alert("Attention, ceci n'est pas une adresse valide")
         }
     }
 
   return (
     <div className='whs-contactform'>
         <div className='whs-contactform-elem'>
-            For Superhereos lovers
+            FOR SUPERHEREOS LOVERS
         </div>
         <div className='whs-contactform-elem'>Leave us your email:</div>
         <input
-                placeholder='Enter your email'
+                placeholder='                               Enter your email'
                 onChange={handleInput}
                 value={inputValue}
                 onBlur={handleBlur}
+                className='whs-contactform-input'
         />
-        <button>Submit</button>
+        <button className='whs-contactform-submit'>SUBMIT</button>
     </div>
   )
 }

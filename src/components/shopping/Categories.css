@@ -4,12 +4,13 @@
 }
 
 .whs-categories-select {
-	width: 250px;
+	width: 220px;
 	margin-right: 10px;
 	color: black;
 	padding: 12px 16px;
+	border-radius: 10px;
 }
-  
-.whs-categories:hover .whs-categories-select {
-	background-color: #166BF8;
+
+.whs-categories-reset {
+	border-radius: 5px;
 }
