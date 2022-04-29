@@ -1,6 +1,45 @@
+.container-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url("../../assets/images/captain-home.png");
 
-.guard {
-    background-image: url('../../assets/images/guardians_2.jpeg');
-    width: 100%;
-    height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 86vh;
+  padding: 5rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.p-button {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.button-home {
+  width: 245px;
+  height: 55px;
+  background: linear-gradient(266.63deg, #001aff 3.85%, #166bf8 80.01%);
+  border-radius: 100px;
+  border-style: inherit;
+  cursor: pointer;
+}
+
+.button-home:hover {
+  border: 1px solid white;
+  background: transparent;
+  transition: transform 0.5s;
 }
