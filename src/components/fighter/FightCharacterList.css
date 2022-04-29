@@ -45,8 +45,8 @@
 
 #fighter1, #fighter2 {
     height:  15.25rem;
-    width: 11.8rem;
-    background-color: var( --primary-color);
+    width: 10rem;
+    background-color: white;
     margin-bottom: 1rem;
     border-radius: 10px;
 }
@@ -55,11 +55,47 @@
     height:158px;
     background-color: white;
     border-radius: 10px 10px 0px 0px;
+    position: relative;
+    width: 10rem;
+}
+
+#imgFighter1, #imgFighter2, #imgFighter1B, #imgFighter2B { 
+    height:158px;
 }
 
 #imgFighter1, #imgFighter2 { 
     height:158px;
     border-radius: 10px 10px 0px 0px;
+}
+
+#imgFighter1 {
+    position: absolute;
+    width: 10rem;
+    z-index: 10;
+}
+
+#imgFighter2 {
+    position: absolute;
+    width: 10rem;
+    z-index: 10;
+}
+
+#imgFighter1B {
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    background-color: transparent;
+    z-index: 20;
+    top: 40px; left: 50px;
+}
+
+#imgFighter2B {
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    background-color: transparent;
+    z-index: 20;
+    top: 40px; left: 50px;
 }
 
 .midleBlock {
@@ -118,16 +154,36 @@
         height: 18.75rem;
         height: 15.75rem;
         width: 18rem;
+        background-color: white;
     }
     
     .container-fighterImg {
         height:16rem;
+        background-color: white;
     }
 
-    #imgFighter1, #imgFighter2 {
+    #imgFighter1, #imgFighter2, #imgFighter1B, #imgFighter2B {
         height: 16rem;
         width: 18rem;
     }  
+
+    #imgFighter1B {
+        position: absolute;
+        height: 8rem;
+        width: 8rem;
+        background-color: transparent;
+        z-index: 20;
+        top: 55px; left: 85px;
+    }
+
+    #imgFighter2B {
+        position: absolute;
+        height: 8rem;
+        width: 8rem;
+        background-color: transparent;
+        z-index: 20;
+        top: 55px; left: 85px;
+    }
 
     .midleBlock {
         height: 0.5rem;
