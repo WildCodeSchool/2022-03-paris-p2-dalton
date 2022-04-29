@@ -1,6 +1,7 @@
 import React from 'react';
 import './Cart.css';
 import { useState } from 'react';
+import basket from './basket.png';
 
 const Cart = () => {
   const cardPrice = 10
@@ -19,7 +20,7 @@ const Cart = () => {
         <button onClick={() => updateCart(0)}>Clear the basket</button>
     </div>
   ) : (
-    <button className='btn-open-cart' onClick={() => setIsOpen(true)}>Open the basket</button>
+    <button className='btn-open-cart' onClick={() => setIsOpen(true)}>Open the basket<img src={basket} alt='basket' width='30' heigth='30' /></button>
   )
 }
 

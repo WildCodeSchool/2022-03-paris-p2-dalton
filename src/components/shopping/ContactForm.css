@@ -1,8 +1,7 @@
 .whs-contactform {
-	color: rgb(21, 21, 21);
-    background-color: white;
+	color: rgb(255, 255, 255);
+    background-color: #166BF8;
 	padding: 32px;
-	border-top: solid 5px rgb(213, 18, 18);
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
@@ -12,4 +11,22 @@
 
 .whs-contactform-elem {
 	margin-bottom: 10px;
+}
+
+.whs-contactform-input {
+	border-radius: 10px;
+	border: solid 1px;
+	background-color: white;
+	width: 30 0px;
+	height: 40px;
+	margin-top: 5px;
+}
+
+.whs-contactform-submit {
+	width: 100px;
+	height: 40px;
+	border-radius: 20px;
+	margin-top: 10px;
+	background-color: #166BF8;
+	color: white;
 }
