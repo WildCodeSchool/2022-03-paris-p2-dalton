@@ -149,7 +149,7 @@
     color: white;
 }
 
-@media screen and (min-width:361px) { 
+@media screen and (min-width:700px) { 
     #fighter1, #fighter2 {
         height: 18.75rem;
         height: 15.75rem;
