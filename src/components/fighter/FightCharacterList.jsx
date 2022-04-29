@@ -160,7 +160,6 @@ const FightCharacterList = () => {
         if ((liveA<=0) || (liveB<=0)) {
           if (liveA<=0) {
             document.getElementById(imgFighterA).src=deadHead
-
           } else
           {
             document.getElementById(imgFighterB).src=deadHead
