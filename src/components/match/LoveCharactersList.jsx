@@ -6,6 +6,7 @@ import "./LoveCharactersList.css";
 import"./LoveCharactersList.scss";
 import heart_blue from "../../assets/images/heart_blue.svg";
 import question_mark_blue from "../../assets/images/question_mark_blue.svg";
+import sonMatch from "../../assets/sons/sonMatch.mp3";
 
 
 
@@ -25,11 +26,14 @@ const LoveCharactersList = () => {
   }, [randomN, randomN2]);
 
  async function randomLoveCharacter(){
-  function delay(n){
-    return new Promise(function(resolve){
-        setTimeout(resolve,n*1000);
-    });
-  }
+    function delay(n){
+      return new Promise(function(resolve){
+          setTimeout(resolve,n*1000);
+      });
+    }
+
+    let audio = new Audio(sonMatch);
+    audio.play();
     let randomNumber = 1;
     let randomNumber2 = 1;
 
