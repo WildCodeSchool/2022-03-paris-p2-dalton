@@ -3,8 +3,10 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="footer">
-      <p>🦸 Made with love by The Dalton’s </p>
+    <div>
+      <footer>
+        <p>🦸 Made with love by The Dalton’s </p>
+      </footer>
     </div>
   );
 }
