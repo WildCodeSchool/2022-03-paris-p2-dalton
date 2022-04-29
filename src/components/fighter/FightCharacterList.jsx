@@ -9,7 +9,10 @@ import stef from "../../assets/images/steph.jpeg"
 import marie from "../../assets/images/marie_toon.jpg"
 import vaishnavi from "../../assets/images/vaishnavi_projet2.jpeg"
 import eric from "../../assets/images/eric2.jpg"
-import splash from "../../assets/images/comic-book-speech-bubble-splash.png"
+import splash1 from "../../assets/images/comic-book1.png"
+import splash2 from "../../assets/images/comic-book2.png"
+import splash3 from "../../assets/images/comic-book3.png"
+import splash4 from "../../assets/images/comic-book4.png"
 import soundPain1 from '../../assets/sons/male/VOXEfrt_Cri de douleur (ID 2361)_LS.wav'
 import soundPain2 from '../../assets/sons/male/VOXScrm_Cri wilhelm (ID 0477)_LS.wav'
 import soundPain3 from '../../assets/sons/FGHTBf_Chute de corps 1 (ID 2452)_LS.wav'
@@ -31,10 +34,14 @@ const FightCharacterList = () => {
   const [fighter1, setFighter1] =useState({})
   const [isVisibleH1Fighter1, setIsVisibleH1Fighter1] = useState(true)
   const [isVisibleImgFighter1, setIsVisibleImgFighter1] = useState(false)
+  const [isVisibleImgFighter1B, setIsVisibleImgFighter1B] = useState(false)
+  const [srcImgFighter1B, setsrcImgFighter1B] = useState(splash1)
 
   const [fighter2, setFighter2] =useState({})
   const [isVisibleH1Fighter2, setIsVisibleH1Fighter2] = useState(true)
   const [isVisibleImgFighter2, setIsVisibleImgFighter2] = useState(false)
+  const [isVisibleImgFighter2B, setIsVisibleImgFighter2B] = useState(false)
+  const [srcImgFighter2B, setsrcImgFighter2B] = useState(splash2)
 
   const [isVisibleWinner, setIsVisibleWinner] = useState(false)
 
@@ -80,15 +87,12 @@ const FightCharacterList = () => {
   const [live2, setLive2] = useState(fighter2.stamina);
 
   const cris = [soundPain1,soundPain2,soundPain3,soundPain4,soundPain5,soundPain6]
+  const imgFightDamage = [splash1,splash2,splash3,splash4]
 
-  
+
   const fight = () => {
 
     let damage;
-
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
 
     function delay(n){
       return new Promise(function(resolve){
@@ -96,14 +100,23 @@ const FightCharacterList = () => {
       });
     }
 
-    const fightStart = async (fighterA, idFighterA, liveA, imgFighterA, setLiveA, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, idFighterB, liveB, imgFighterB, setLiveB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    const fightStart = async (fighterA, idFighterA, liveA, imgFighterA, setLiveA, setIsVisibleImgFighterAB, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, idFighterB, liveB, imgFighterB, setLiveB, setIsVisibleImgFighterBB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
 
       while (liveA>0 && liveB>0) {
+        setIsVisibleImgFighterAB(false)
+        setIsVisibleImgFighterBB(false)
+
         let audio = new Audio(cris[getRandomInt(5)]);
 
-        damage = getRandomInt(fighterA.force/10)
+        damage = getRandomInt(fighterA.force/6)
         liveB=liveB-damage
         setLiveB(liveB) 
+        setsrcImgFighter2B(imgFightDamage[getRandomInt(imgFightDamage.length)])
+        setIsVisibleImgFighterBB(true)
 
         // Fighter A attack
         audio.play();
@@ -117,11 +130,16 @@ const FightCharacterList = () => {
           document.getElementById(idHeartBImg3).src=heartVide
         }
 
+        await delay(1);
+        setIsVisibleImgFighterBB(false)
+
         // Fighter B attack
         if (liveB>0) {
-          damage = getRandomInt(fighterB.force/10)
+          damage = getRandomInt(fighterB.force/6)
           liveA=liveA-damage
           setLiveA(liveA) 
+          setsrcImgFighter1B(imgFightDamage[getRandomInt(imgFightDamage.length)])
+          setIsVisibleImgFighterAB(true)
           audio.play();
   
           if (liveA<=0) {
@@ -136,11 +154,13 @@ const FightCharacterList = () => {
         }
         
         await delay(1);
+        setIsVisibleImgFighterAB(false)
 
         // Display Dead head with laugh
         if ((liveA<=0) || (liveB<=0)) {
           if (liveA<=0) {
             document.getElementById(imgFighterA).src=deadHead
+
           } else
           {
             document.getElementById(imgFighterB).src=deadHead
@@ -170,9 +190,9 @@ const FightCharacterList = () => {
     }
 
     if (fighter1.speed>fighter2.speed) {
-      fightStart(fighter1, "fighter1", fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, "fighter2", fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
+      fightStart(fighter1, "fighter1", fighter1.stamina, "imgFighter1", setLive1, setIsVisibleImgFighter1B, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1", fighter2, "fighter2", fighter2.stamina, "imgFighter2", setLive2, setIsVisibleImgFighter2B, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2");
     } else {
-      fightStart(fighter2, "fighter2", fighter2.stamina, "imgFighter2", setLive2, "imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, "fighter1", fighter1.stamina, "imgFighter1", setLive1, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
+      fightStart(fighter2, "fighter2", fighter2.stamina, "imgFighter2", setLive2, setIsVisibleImgFighter2B,"imgHeart1Fighter2", "imgHeart2Fighter2", "imgHeart3Fighter2", fighter1, "fighter1", fighter1.stamina, "imgFighter1", setLive1, setIsVisibleImgFighter1B, "imgHeart1Fighter1", "imgHeart2Fighter1", "imgHeart3Fighter1");
     }
   }
 
@@ -202,13 +222,17 @@ const FightCharacterList = () => {
       <div className="fighters">
         <div id="fighter1">
           <div className="container-fighterImg">
-          {isVisibleImgFighter1 &&
-            <img id="imgFighter1" src={fighter1.image}  alt="imgFighter1" />
-            
-          }
-          {!isVisibleImgFighter1 &&
-            <img id="imgFighter1" onClick={changeImgFighter1}  src={( imgFighter1 ? stef : vaishnavi)} alt="imgFighter1" />
-          }
+            {isVisibleImgFighter1 &&
+            <div>
+              <img id="imgFighter1" src={fighter1.image}  alt="imgFighter1" />
+              {isVisibleImgFighter1B &&
+                <img id="imgFighter1B" src={srcImgFighter1B}  alt="imgFighter1B" /> 
+              }            
+            </div>
+            }
+            {!isVisibleImgFighter1 &&
+              <img id="imgFighter1" onClick={changeImgFighter1}  src={( imgFighter1 ? stef : vaishnavi)} alt="imgFighter1" />
+            }
           </div>
           <div className="midleBlock"></div>
           <div className="fighter1Info">
@@ -222,7 +246,7 @@ const FightCharacterList = () => {
             <h5>Stamina : {fighter1.stamina}</h5>
             <h5>Speed : {fighter1.speed}</h5>
             <h5>Live : {live1}</h5>
-          <div className="heart">
+            <div className="heart">
               <img id="imgHeart1Fighter1" src={heart} alt="Coeur" />
               <img id="imgHeart2Fighter1" src={heart} alt="Coeur" />
               <img id="imgHeart3Fighter1" src={heart} alt="Coeur" />
@@ -232,7 +256,12 @@ const FightCharacterList = () => {
         <div id="fighter2">
           <div className="container-fighterImg">
             {isVisibleImgFighter2 &&  
-              <img id="imgFighter2" src={fighter2.image} alt="imgFighter2" />
+              <div>
+                  <img id="imgFighter2" src={fighter2.image}  alt="imgFighter2" />
+                  {isVisibleImgFighter2B &&
+                    <img id="imgFighter2B" src={srcImgFighter2B}  alt="imgFighter2B" /> 
+                  }     
+              </div>
             }
             {!isVisibleImgFighter2 &&  
             <img id="imgFighter2" onClick={changeImgFighter2} src={imgFighter2 ? marie : eric}  alt="imgFighter2" />
@@ -255,8 +284,8 @@ const FightCharacterList = () => {
               <img id="imgHeart2Fighter2" src={heart} alt="Coeur" />
               <img id="imgHeart3Fighter2" src={heart} alt="Coeur" />
             </div>
-          </div>
-        </div>          
+          </div>          
+        </div>
       </div>
       <div className="pannelButton">
         <button className="fightButton" onClick={fight}>Let's fight!</button>
