@@ -47,16 +47,46 @@ const LoveCharactersList = () => {
 
   return (
     <div className="LoveCharactersList">
-      <div className="title">
-        <h2 className="LoveCharactersList-title">Love is just a click away !</h2>
+      <div className="container-title">
+        <h1 className="LoveCharactersList-title">Love is just a click away !</h1>
       </div>
+      <h2 className="title-top3"> Top 3 female of the week</h2>
       <div className="love-cards-container">
         {loveCharacters &&
-          loveCharacters.map((loveCharacter) => (
-            <div key={loveCharacter.id}>
-              <LoveCharacter loveCharacter={loveCharacter} />
-            </div>
-          ))}
+          loveCharacters
+            .filter((loveCharacter) => {
+              return (
+                (loveCharacter.race !== "Mutant" &&
+                  loveCharacter.gender !== "Male" &&
+                  loveCharacter.name == "Super Marie") ||
+                loveCharacter.name == "Super Steph" ||
+                loveCharacter.name == "Super Vaish"
+              );
+            })
+            .map((loveCharacter) => (
+              <div key={loveCharacter.id}>
+                <LoveCharacter loveCharacter={loveCharacter} />
+              </div>
+            ))}
+      </div>
+
+      <h2 className="title-top3"> Top 3 Male of the week</h2>
+      <div className="love-cards-container">
+        {loveCharacters &&
+          loveCharacters
+            .filter((loveCharacter) => {
+              return (
+                loveCharacter.race !== "Human" &&
+                loveCharacter.race !== "Mutant" &&
+                loveCharacter.gender !== "Female" &&
+                loveCharacter.stamina >= 76
+              );
+            })
+            .map((loveCharacter) => (
+              <div key={loveCharacter.id}>
+                <LoveCharacter loveCharacter={loveCharacter} />
+              </div>
+            ))}
       </div>
 
       <div className="container-match-card">
@@ -65,14 +95,13 @@ const LoveCharactersList = () => {
           {trigger && (
             <Typewriter
               onInit={(typewriter) => {
-                typewriter.typeString("it’s a match !")
-                          .start();
+                typewriter.typeString("it’s a match !").start();
               }}
             />
           )}
         </div>
         <div className="container-heart-blue">
-        <img src={heart_blue} alt="" />
+          <img src={heart_blue} alt="" />
         </div>
         <div className="container-match-card-img">
           <img
@@ -88,9 +117,16 @@ const LoveCharactersList = () => {
           />
         </div>
       </div>
-      <div className="button-container">
+      <div className="button-container btn1">
         <button className="button-match pulse" onClick={randomLoveCharacter}>
           LET’S MATCH !
+        </button>
+      </div>
+
+      <div className="button-container btn2">
+        <button className="button-war">
+          I prefer war
+          <a href="../../pages/fight/Fight.jsx"></a>
         </button>
       </div>
     </div>
