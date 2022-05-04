@@ -59,12 +59,6 @@ const LoveCharactersList = () => {
           ))}
       </div>
 
-      <div className="button-container">
-        <button className="button-match pulse" onClick={randomLoveCharacter}>
-          LET’S MATCH !
-        </button>
-      </div>
-
       <div className="container-match-card">
         <h2 className="title-match-card" id="title-match-card"></h2>
         <div className="container-trigger">
@@ -93,6 +87,11 @@ const LoveCharactersList = () => {
             alt="img hero 2"
           />
         </div>
+      </div>
+      <div className="button-container">
+        <button className="button-match pulse" onClick={randomLoveCharacter}>
+          LET’S MATCH !
+        </button>
       </div>
     </div>
   );
