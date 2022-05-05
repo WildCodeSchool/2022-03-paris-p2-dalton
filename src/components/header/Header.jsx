@@ -41,7 +41,7 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link to="/Match" className="link">
+                <Link to="/match" className="link">
                   Match your heroes
                 </Link>
               </li>
