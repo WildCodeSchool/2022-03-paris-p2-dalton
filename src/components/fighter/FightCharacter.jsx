@@ -7,14 +7,12 @@ const FightCharacter = ({ character, getID } ) => {
   return (
     <>
       <div className='character'>
-        <div id={character.id} className='character-cards' onClick={getID}>
+        <div id={character.id} onClick={getID}>
             <p>{character.name}</p>
             <img className="character-img" alt={character.name} src={character.image} />
         </div>
       </div>
-     
     </>
-
   )
 }
 
