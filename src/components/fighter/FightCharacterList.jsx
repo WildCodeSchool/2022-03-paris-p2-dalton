@@ -21,6 +21,12 @@ import soundPain5 from '../../assets/sons/FGHTImpt_Coup de poing 6 (ID 2461)_LS.
 import soundPain6 from '../../assets/sons/HMNHart_Battement de coeur 1 (ID 0243)_LS.wav'
 import soundDead from '../../assets/sons/haharir.mp3'
 import soundApplause from '../../assets/sons/CRWDCheer_Applaudissements concert bar 1 (ID 2479)_LS.wav'
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// import required modules
+import { Pagination } from "swiper";
 
 
 const FightCharacterList = () => {
@@ -199,13 +205,47 @@ const FightCharacterList = () => {
 
   return (
     <div>
-      <div className="characterList">
-          <div className='cards-container'>
-              { characters &&
-              characters.map((character) => (
+      <div>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={10}
+
+          breakpoints= {{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 4,
+              spaceBetween: 10
+            },
+            480: {
+              slidesPerView: 6,
+              spaceBetween: 10
+            },
+            800: {
+              slidesPerView:8,
+              spaceBetween: 10
+            },
+            1000: {
+              slidesPerView: 10,
+              spaceBetween: 10
+            }
+          }}
+
+          pagination={{
+            clickable: true,
+          }}
+
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          <div>
+            { characters &&
+            characters.map((character) => (
+              <SwiperSlide>
                 <FightCharacter character={character} key={character.id} getID={getID} />
-              ))}
+              </SwiperSlide>
+            ))}
           </div>
+        </Swiper>
       </div>
       <div className="container-select-hero">
         {isVisibleH1Fighter1 &&

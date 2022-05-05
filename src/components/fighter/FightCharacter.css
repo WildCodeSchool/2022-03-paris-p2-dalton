@@ -1,26 +1,12 @@
 
 .character-img {
-    width: 10.8vh;
-    height: 10.8vh;
+    min-width: 10.8vh;
+    min-height: 10.8vh;
     cursor: pointer;
     object-fit: cover;
 }
 
-.character {
-    display: flex;
-    gap: 4px;
-}
-
 .character p {
     text-align: center;
-}
-
-.character-cards {
-    width: 10.8vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.character-cards p {
-    font-size: 0.5em;
+    font-size:xx-small;
 }
