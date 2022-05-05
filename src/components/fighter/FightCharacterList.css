@@ -126,7 +126,6 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 0.6rem;
     margin-top: 1.5rem;
 }
 
@@ -151,7 +150,6 @@
 
 @media screen and (min-width:700px) { 
     #fighter1, #fighter2 {
-        height: 18.75rem;
         height: 15.75rem;
         width: 18rem;
         background-color: white;
@@ -160,6 +158,7 @@
     .container-fighterImg {
         height:16rem;
         background-color: white;
+        width: 18rem;
     }
 
     #imgFighter1, #imgFighter2, #imgFighter1B, #imgFighter2B {
