@@ -137,8 +137,6 @@
 }
 
 .fighter1Info h4, .fighter2Info h4 {
-    padding-top: 0.2rem;
-    margin-bottom: 0.2rem;
     padding-top: 0.4rem;
     margin-bottom: 0.4rem;
     text-align: center;
@@ -221,7 +219,6 @@
     }
 
     .fighter1Info h4, .fighter2Info h4 {
-
         padding-top: 0.8rem;
         margin-bottom: 0.8rem;
 
