@@ -40,7 +40,7 @@ $colors: (
     --hover: #{adjust-hue($color, 45deg)};
   }
 }
-button {  
+.button-match {  
   color: #166BF8;
   transition: 0.25s;
   

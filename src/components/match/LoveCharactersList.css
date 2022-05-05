@@ -3,21 +3,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
-  margin-bottom: 3rem;
-  padding-top: 5rem;
   justify-content: center;
+  margin-bottom: 3rem;
   padding-left: 8rem;
   padding-right: 8rem;
-
+  padding-top: 1rem;
 }
 .LoveCharactersList {
   width: 100%;
   margin: auto;
   background-color: rgba(22, 20, 20, 1);
+  padding-bottom: 5rem;
 }
 
 /* Title */
-.title {
+.container-title {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -29,7 +29,7 @@
   align-items: center;
   color: rgba(255, 255, 255, 1);
   font-family: "Roboto Condensed";
-  font-size: 20px;
+  font-size: 36px;
   font-weight: 400;
   line-height: 18px;
   margin-top: 2rem;
@@ -43,6 +43,10 @@
   display: inline-block;
   content: url(../../assets/images/wonder_woman.svg);
   margin-left: 1rem;
+}
+.title-top3 {
+  text-align: center;
+  margin: 2rem 0;
 }
 
 #title-match-card {
@@ -76,29 +80,24 @@
   display: flex;
   justify-content: center;
   margin-top: 3rem;
-  /* position: relative; */
-  animation: .8s beat infinite;
+  animation: 0.8s beat infinite;
 }
 @keyframes beat {
-    0% {
-      transform: scale(1);
-    }
-    25% {
-      transform: scale(1.1);
-    }
-    40% {
-      transform: scale(1);
-    }
-    60% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
   }
-
-.container-heart-blue img {
-
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .container-trigger {
@@ -113,3 +112,23 @@
   justify-content: center;
   margin-top: 3rem;
 }
+
+.btn2 {
+  margin-top: 3rem;
+}
+.button-war {
+  color: rgba(22, 107, 248, 1);
+  height: 55px;
+  width: 173px;
+  border-radius: 100px;
+  background: transparent;
+  background-repeat: no-repeat;
+  outline: none;
+   font-family: Roboto Condensed;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center; 
+  text-transform: uppercase;
+} 
