@@ -1,7 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import wildheroes from "../../assets/images/wildheroes.svg";
-import burger from "../../assets/images/burger-menu.svg";
 import cadie from "../../assets/images/cadie.svg";
 import { useState } from "react";
 
@@ -37,7 +36,7 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link to="/fight" className="link">
+                <Link to="fight" className="link">
                   Fight
                 </Link>
               </li>
@@ -63,11 +62,6 @@ function Header() {
             <label className="menu-icon" for="menu-btn">
               <span className="navicon"></span>
             </label>
-
-            {/* 
-            <img className='burger-menu' for="toggle-btn" src={burger} alt='burger-menu' />
-  */}
-
             {isVisible && (
               <ul className="menu">
                 <li>

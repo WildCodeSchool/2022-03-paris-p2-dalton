@@ -2,7 +2,7 @@
 .characterList {
     width: 100vw;
     margin: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .cards-container {
@@ -130,11 +130,10 @@
 }
 
 .pannelButton {
-    height: 8rem;
+    height: 6rem;
     display: flex;
     justify-content: center;
     margin-top:5rem;
-    margin-bottom: 1rem;
 }
 
 .fightButton {
@@ -142,7 +141,7 @@
     width: 10rem;
     font-family: var( --fontFight);
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     border-radius: 10rem;
     background-color: var( --primary-color);
     color: white;
@@ -189,7 +188,6 @@
         background-color: var( --primary-color);
     }
     
-
     .fighter1Info, .fighter2Info {
         height: 11rem;
     }
@@ -199,7 +197,7 @@
     }
     
     .pannelButton {
-        height: 20rem;
+        height: 6rem;
         margin-top: 12.5rem;
     }    
 }
