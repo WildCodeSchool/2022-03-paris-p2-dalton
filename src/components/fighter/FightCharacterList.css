@@ -69,6 +69,7 @@
 
 #fighter1, #fighter2 {
     height:  15.25rem;
+    min-height: 15.25rem;
     width: 10rem;
     background-color: white;
     margin-bottom: 1rem;
@@ -128,7 +129,8 @@
 }
 
 .fighter1Info, .fighter2Info {
-    height: 19vh;
+    height: 9rem;
+    min-height: 9rem;
     background-color: white;
     color: black;
     border-radius: 0px 0px 10px 10px;
@@ -150,7 +152,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .pannelButton {
@@ -174,6 +176,7 @@
 @media screen and (min-width:700px) { 
     #fighter1, #fighter2 {
         height: 15.75rem;
+        min-height: 15.75rem;
         width: 18rem;
         background-color: white;
     }
@@ -214,12 +217,24 @@
     
     .fighter1Info, .fighter2Info {
         height: 11rem;
+        min-height: 11rem;
+    }
+
+    .fighter1Info h4, .fighter2Info h4 {
+
+        padding-top: 0.8rem;
+        margin-bottom: 0.8rem;
+
     }
 
     .fighter1Info h5, .fighter2Info h5 {
         margin-left: 6rem;
     }
     
+    .heart {
+        margin-top: 1.5rem;
+    }
+
     .pannelButton {
         height: 6rem;
         margin-top: 12.5rem;
