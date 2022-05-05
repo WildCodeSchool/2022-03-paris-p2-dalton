@@ -8,6 +8,7 @@ import heart_blue from "../../assets/images/heart_blue.svg";
 import question_mark_blue from "../../assets/images/question_mark_blue.svg";
 import sonMatch from "../../assets/sons/sonMatch.mp3";
 import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";
 
 const LoveCharactersList = () => {
   const [loveCharacters, setLoveCharacters] = useState([]);
@@ -124,10 +125,10 @@ const LoveCharactersList = () => {
       </div>
 
       <div className="button-container btn2">
-        <button className="button-war">
+       <Link to="/fight" className="link"> <button className="button-war" >
           I prefer war
-          <a href="../../pages/fight/Fight.jsx"></a>
         </button>
+        </Link>
       </div>
     </div>
   );
