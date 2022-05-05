@@ -31,22 +31,22 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link to="heroes" className="link">
+                <Link to="/heroes" className="link">
                   All heroes
                 </Link>
               </li>
               <li>
-                <Link to="fight" className="link">
+                <Link to="/fight" className="link">
                   Fight
                 </Link>
               </li>
               <li>
-                <Link to="Match" className="link">
+                <Link to="/match" className="link">
                   Match your heroes
                 </Link>
               </li>
               <li>
-                <Link to="shop" className="link">
+                <Link to="/shop" className="link">
                   Heroes shop
                 </Link>
               </li>
