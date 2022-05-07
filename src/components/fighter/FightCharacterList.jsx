@@ -112,56 +112,70 @@ const FightCharacterList = () => {
 
     const fightStart = async (fighterA, idFighterA, liveA, imgFighterA, setLiveA, setIsVisibleImgFighterAB, idHeartAImg1, idHeartAImg2, idHeartAImg3, fighterB, idFighterB, liveB, imgFighterB, setLiveB, setIsVisibleImgFighterBB, idHeartBImg1, idHeartBImg2, idHeartBImg3) => {
 
-      while (liveA>0 && liveB>0) {
-        setIsVisibleImgFighterAB(false)
-        setIsVisibleImgFighterBB(false)
+      const timeSpeedA=0.6+((100-parseInt(fighterA.speed))/100);
+      const timeSpeedB=0.6+((100-parseInt(fighterB.speed))/100);
+      const timeSpeedC=0.6
+      
+      console.log('timeSpeedA='+timeSpeedA)
+      console.log('timeSpeedB='+timeSpeedB)
+      console.log('timeSpeedC='+timeSpeedC)
 
-        let audio = new Audio(cris[getRandomInt(5)]);
+      let audio = new Audio(cris[getRandomInt(5)]);
 
-        damage = getRandomInt(fighterA.force/6)
-        liveB=liveB-damage
-        setLiveB(liveB) 
-        setsrcImgFighter2B(imgFightDamage[getRandomInt(imgFightDamage.length)])
-        setIsVisibleImgFighterBB(true)
-
-        // Fighter A attack
-        audio.play();
-        if (liveB<=0) {
-          document.getElementById(idHeartBImg1).src=heartVide
-        }  else
-        if (liveB<(parseInt(fighterB.stamina)/3)) {
-          document.getElementById(idHeartBImg2).src=heartVide
-        } else
-        if (liveB<(parseInt(fighterB.stamina)*2/3)) {
-          document.getElementById(idHeartBImg3).src=heartVide
-        }
-
-        await delay(1);
-        setIsVisibleImgFighterBB(false)
-
-        // Fighter B attack
-        if (liveB>0) {
-          damage = getRandomInt(fighterB.force/6)
-          liveA=liveA-damage
-          setLiveA(liveA) 
-          setsrcImgFighter1B(imgFightDamage[getRandomInt(imgFightDamage.length)])
-          setIsVisibleImgFighterAB(true)
-          audio.play();
+      const fightA = async () => {
+          // Fighter A attack
+          damage = getRandomInt(fighterA.force/8)
+          if (damage<1) {damage=1}
+          console.log('A '+damage)
+          liveB=liveB-damage
+          setLiveB(liveB) 
+          setsrcImgFighter2B(imgFightDamage[getRandomInt(imgFightDamage.length)])
+          setIsVisibleImgFighterBB(true)
   
-          if (liveA<=0) {
-            document.getElementById(idHeartAImg1).src=heartVide
+          audio.play();
+          if (liveB<=0) {
+            document.getElementById(idHeartBImg1).src=heartVide
+          }  else
+          if (liveB<(parseInt(fighterB.stamina)/3)) {
+            document.getElementById(idHeartBImg2).src=heartVide
           } else
-          if (liveA<(parseInt(fighterA.stamina)/3)) {
-            document.getElementById(idHeartAImg2).src=heartVide
-          } else
-          if (liveA<(parseInt(fighterA.stamina)*2/3)) {
-            document.getElementById(idHeartAImg3).src=heartVide
-          } 
-        }
-        
-        await delay(1);
-        setIsVisibleImgFighterAB(false)
+          if (liveB<(parseInt(fighterB.stamina)*2/3)) {
+            document.getElementById(idHeartBImg3).src=heartVide
+          }
+  
+          await delay(timeSpeedB);
+          setIsVisibleImgFighterBB(false)
+      }
 
+      const fightB = async () => {
+          // Fighter B attack
+          if (liveB>0) {
+            damage = getRandomInt(fighterB.force/8)
+            if (damage<1) {damage=1}
+            console.log('B '+damage)
+            liveA=liveA-damage
+            setLiveA(liveA) 
+            setsrcImgFighter1B(imgFightDamage[getRandomInt(imgFightDamage.length)])
+            setIsVisibleImgFighterAB(true)
+            audio.play();
+
+            if (liveA<=0) {
+              document.getElementById(idHeartAImg1).src=heartVide
+            } else
+            if (liveA<(parseInt(fighterA.stamina)/3)) {
+              document.getElementById(idHeartAImg2).src=heartVide
+            } else
+            if (liveA<(parseInt(fighterA.stamina)*2/3)) {
+              document.getElementById(idHeartAImg3).src=heartVide
+            } 
+          }
+          
+          await delay(timeSpeedA);
+          setIsVisibleImgFighterAB(false)
+
+      }
+
+      const finalFight = async () => { 
         // Display Dead head with laugh
         if ((liveA<=0) || (liveB<=0)) {
           if (liveA<=0) {
@@ -191,7 +205,22 @@ const FightCharacterList = () => {
           await delay(6);
           window.top.location = window.top.location
         }
+      }     
+
+
+      while (liveA>0 && liveB>0) {
+        setIsVisibleImgFighterAB(false)
+        setIsVisibleImgFighterBB(false)
+
+        fightA();  
+        fightB();
+        await delay(timeSpeedC);
       }
+
+      setTimeout(() => {
+       }, 2000);
+
+      finalFight();
     }
 
     if (fighter1.speed>fighter2.speed) {
