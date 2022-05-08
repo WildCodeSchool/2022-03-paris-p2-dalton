@@ -268,7 +268,9 @@ const FightCharacterList = () => {
         >
           <div>
             { characters &&
-            characters.map((character) => (
+              characters
+              .filter((character) => (character.name!=="Kick-Ass"))
+              .map((character) => (
               <SwiperSlide>
                 <FightCharacter character={character} key={character.id} getID={getID} />
               </SwiperSlide>
