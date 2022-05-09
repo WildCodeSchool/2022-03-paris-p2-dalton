@@ -27,14 +27,3 @@ const Shopping = ({ shopping }) => {
 }
 
 export default Shopping
-
-
-// const [price, setPrice] = useState(0);
-    
-    // useEffect(() => {
-    //     const myPrice = () => {
-    //         let randomPrice = Math.floor(Math.random() * (20 - 10) + 10);
-    //         return setPrice(randomPrice)
-    //     };
-    //     myPrice()
-    // }, [])
