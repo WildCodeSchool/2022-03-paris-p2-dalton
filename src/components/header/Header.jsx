@@ -60,16 +60,16 @@ function Header() {
                     <Link to="/" onClick={close} className="link">Home</Link>  
                   </li>
                   <li>
-                    <Link to="heroes" onClick={close} className="link">All heroes</Link>
+                    <Link to="/heroes" onClick={close} className="link">All heroes</Link>
                   </li>
                   <li>
-                    <Link to="fight" onClick={close} className="link">Fight</Link>
+                    <Link to="/fight" onClick={close} className="link">Fight</Link>
                   </li>
                   <li>
-                    <Link to="Match"  onClick={close} className="link">Match your heroes</Link>
+                    <Link to="/match"  onClick={close} className="link">Match your heroes</Link>
                   </li>
                   <li>
-                    <Link to="shop" onClick={close} className="link">Heroes shop</Link>
+                    <Link to="/shop" onClick={close} className="link">Heroes shop</Link>
                   </li>
                 </ul>
     }
