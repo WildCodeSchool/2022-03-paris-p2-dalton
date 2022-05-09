@@ -1,0 +1,139 @@
+h2 {
+    font-size: 24px;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+.cart {
+    color: white;
+}
+
+.whs-cart-toggle-button-close {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #e11818;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+    width: 350px;
+    height: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .whs-cart-toggle-button-close span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .whs-cart-toggle-button-close span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .whs-cart-toggle-button-close:hover span {
+    padding-right: 25px;
+  }
+  
+  .whs-cart-toggle-button-close:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .whs-cart-toggle-button-open {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #166BF8;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 350px;
+    height: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .whs-cart-toggle-button-open span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .whs-cart-toggle-button-open span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .whs-cart-toggle-button-open:hover span {
+    padding-right: 25px;
+  }
+  
+  .whs-cart-toggle-button-open:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .whs-cart-add-products {
+    border: solid 3px white;
+    background-color: whitesmoke;
+    color: black;
+  }
+
+  .whs-cart-clear-button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(234, 17, 17);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.whs-cart-clear-button:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.whs-cart-clear-button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.whs-delivery {
+  border: solid 3px white;
+  background-color: whitesmoke;
+  color: black;
+}
+
+.whs-payment {
+  border: solid 3px white;
+    background-color: whitesmoke;
+    color: black;
+}

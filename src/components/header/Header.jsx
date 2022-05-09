@@ -4,6 +4,7 @@ import wildheroes from '../../assets/images/wildheroes.svg'
 import burger from '../../assets/images/burger-menu.svg';
 import cadie from '../../assets/images/cadie.svg';
 import { useState } from 'react';
+import Cart from '../shopping/Cart';
 
 
 function Header() {
@@ -77,7 +78,7 @@ function Header() {
               </div>
             </div>
         <div className='header-cadie'>
-          <img height="" src={cadie} alt='cadie'/>
+          <img height="" src={cadie} alt='cadie' />
         </div>
 
       </header>

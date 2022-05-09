@@ -10,6 +10,7 @@
 	width: 215px;
 	margin: 60px;
     background-color: #ffffff;
+	box-shadow: 10px 5px 5px #818892;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -31,29 +32,6 @@
 
 .whs-cards-prices {
 	padding-left: 70px;
+	margin-bottom: 10px;
+	font-size: 20px;
 }
-
-.btn-card {
-	padding-left: 60px;
-}
-
-.btn-add {
-	/* position: relative; */
-	background-color: rgb(50, 43, 43);
-	border-radius: 20px;
-	font-size: 15px;
-	color: whitesmoke;
-	padding: 12px;
-	width: 150px;
-	text-align: center;
-	cursor: pointer;
-  }
-
-  .btn-reset {
-	position: relative;
-	border: solid #e5e5e5;
-	display: inline-block;
-	width: 60px;
-	height: 60px;
-	background-color: #e5e5e5;
-  }
