@@ -1,10 +1,8 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 import wildheroes from '../../assets/images/wildheroes.svg'
-import burger from '../../assets/images/burger-menu.svg';
 import cadie from '../../assets/images/cadie.svg';
 import { useState } from 'react';
-import Cart from '../shopping/Cart';
 
 
 function Header() {
