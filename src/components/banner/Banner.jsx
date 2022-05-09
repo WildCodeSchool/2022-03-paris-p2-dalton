@@ -16,7 +16,7 @@ export const Banner = () => {
 
   return (
     <div>
-      <img src={randomImage.picture} alt="img-banner" />
+      <img src={randomImage.picture} className="img-banner" alt="img-banner" />
     </div>
   );
 };
