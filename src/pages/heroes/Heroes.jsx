@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Heroes.css";
+import { Banner } from "../../components/banner/Banner";
 
 export default function () {
   const [query, setQuery] = useState("");
@@ -17,7 +18,10 @@ export default function () {
 
   return (
     <div className="container-body">
-      <div className="img-banner"></div>
+      <div className="img-banner">
+        {" "}
+        <Banner />
+      </div>
       <div className="container-input">
         <h2>Heroes list</h2>
         <p>You can search and filter your favorite heroes</p>
