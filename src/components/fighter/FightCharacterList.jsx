@@ -172,7 +172,6 @@ const FightCharacterList = () => {
           
           await delay(timeSpeedA);
           setIsVisibleImgFighterAB(false)
-
       }
 
       const finalFight = async () => { 
