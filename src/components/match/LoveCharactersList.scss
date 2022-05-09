@@ -14,6 +14,7 @@
     background: linear-gradient(262.21deg, #166BF8 13.73%, #001AFF 85.14%);
     outline: none;
     border:none;
+    margin-top:3rem;
 }
 
 
@@ -39,7 +40,7 @@ $colors: (
     --hover: #{adjust-hue($color, 45deg)};
   }
 }
-button {  
+.button-match {  
   color: #166BF8;
   transition: 0.25s;
   
