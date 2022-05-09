@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './ContactForm.css';
+import './styles/ContactForm.css';
 
 const ContactForm = () => {
     const [inputValue, setInputValue] = useState('')
@@ -10,7 +10,7 @@ const ContactForm = () => {
     }
 
     function handleBlur() {
-        if (!inputValue.includes('@')) {
+        if ((!inputValue.includes('@'))) {
             alert("Attention, ceci n'est pas une adresse valide")
         }
     }
@@ -22,7 +22,7 @@ const ContactForm = () => {
         </div>
         <div className='whs-contactform-elem'>Leave us your email:</div>
         <input
-                placeholder='                               Enter your email'
+                placeholder='Enter your email'
                 onChange={handleInput}
                 value={inputValue}
                 onBlur={handleBlur}

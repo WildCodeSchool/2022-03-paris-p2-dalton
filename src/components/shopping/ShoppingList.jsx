@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Shopping from './Shopping';
 import Categories from './Categories';
-import './ShoppingList.css';
+import './styles/ShoppingList.css';
 
-const ShoppingList = () => {
+const ShoppingList = ({cart, updateCart}) => {
     const [shoppings, setShoppings] = useState([]);
     
-    const url = "https://lit-badlands-40023.herokuapp.com/heros"
+    const url = "http://localhost:8000/api/heroes"
 
     useEffect(() => {
         axios
@@ -24,6 +24,21 @@ const ShoppingList = () => {
         []
     )
 
+    function addToCart(name, price) {
+        const currentCardSaved = cart.find((card) => card.name === 'name')
+        if (currentCardSaved) {
+            const cartFilteredCurrentCard = cart.filter(
+                (card) => card.name !== 'name'
+            )
+            updateCart ([
+                ...cartFilteredCurrentCard,
+                { name, price, amount: currentCardSaved.amount + 1 }
+            ])
+        } else {
+            updateCart([...cart,
+                { name, price, amount: 1 }])
+        }
+    }
 
   return (
     <div className='whs-shopping-list'>
@@ -35,12 +50,19 @@ const ShoppingList = () => {
         <ul className='whs-shopping-list'>
         {shoppings && 
         shoppings.filter((shopping) => {
-            return ((shopping.id !== '8') && (shopping.id !== '10') && (shopping.id !== '19'));
+            return ((shopping.id !== 10) && (shopping.id !== 12));
         })
         .map((shopping) => 
         !activeCategory || activeCategory === shopping.race ? (
             <div key={shopping.id}>
-                <Shopping shopping={shopping} />
+                <Shopping shopping={shopping}
+                        name={shopping.name}
+                        picture={shopping.picture}
+                        price={shopping.price} 
+                />
+            <div>
+            <button className='button-add' onClick={() => addToCart(shopping.name, shopping.price)}>Add to bag</button>
+            </div>
             </div>
         ) : null
         )}
