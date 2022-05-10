@@ -51,7 +51,7 @@ const LoveCharactersList = () => {
       <div className="container-title">
         <h1 className="LoveCharactersList-title">Love is just a click away !</h1>
       </div>
-      <h2 className="title-top3"> Top 3 female of the week</h2>
+      <h2 className="title-top3 female"> Top 3 female of the week</h2>
       <div className="love-cards-container">
         {loveCharacters &&
           loveCharacters
@@ -71,7 +71,7 @@ const LoveCharactersList = () => {
             ))}
       </div>
 
-      <h2 className="title-top3"> Top 3 Male of the week</h2>
+      <h2 className="title-top3 male"> Top 3 Male of the week</h2>
       <div className="love-cards-container">
         {loveCharacters &&
           loveCharacters

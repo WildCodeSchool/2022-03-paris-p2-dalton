@@ -25,12 +25,13 @@ h3 {
   height: 9.8rem;
   object-fit: cover;
   border-radius: 1rem 1rem 0px 0px;
+  display: flex;
 }
 
 .loveCharacter-rectangle {
   width: 144px;
   height: 9px;
-  background: #166bf8;
+  background-color: #166bf8;
 }
 .loveCharacter-text {
   background-color: #fff;
@@ -50,3 +51,8 @@ h3 {
   color: #161414;
   font-size: 0.813rem;
 }
+/* @media (max-width: 62.5rem) {
+    .LoveCharactersList-title {
+       color: teal;
+    }
+} */
