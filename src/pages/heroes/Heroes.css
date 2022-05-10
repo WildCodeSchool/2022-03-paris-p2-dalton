@@ -75,8 +75,8 @@ input:focus {
 }
 
 .img-banner {
-  background-image: url(../../assets/images/captain.png);
-  background-position: center;
-  background-size: cover;
   height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
 }

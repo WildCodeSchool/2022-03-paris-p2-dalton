@@ -15,6 +15,11 @@ const ContactForm = () => {
         }
     }
 
+    // il faudra appeler le navigate = useNavigate
+    // puis tu crées une fonction qui déclenche ce navigate avec un chemin en paramètre navigate("/home")
+    // sur le onCLick du bouton, tu rappelles ta fonction
+
+
   return (
     <div className='whs-contactform'>
         <div className='whs-contactform-elem'>
