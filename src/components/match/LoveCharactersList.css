@@ -16,7 +16,6 @@
   padding-bottom: 5rem;
 }
 
-/* Title */
 .container-title {
   display: flex;
   text-align: center;
@@ -42,11 +41,29 @@
   width: 50px;
   display: inline-block;
   content: url(../../assets/images/wonder_woman.svg);
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .title-top3 {
   text-align: center;
   margin: 2rem 0;
+}
+
+.female::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  content: url(../../assets/images/catwoman.svg);
+  margin-right: 1rem;
+}
+
+.male::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  content: url(../../assets/images/daredevil.svg);
+  margin-right: 1rem;
 }
 
 #title-match-card {
@@ -55,7 +72,6 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 23px;
-  letter-spacing: 0em;
   text-align: center;
   text-transform: uppercase;
   margin-top: 5rem;
@@ -121,14 +137,34 @@
   height: 55px;
   width: 173px;
   border-radius: 100px;
-  background: transparent;
+  background-color: transparent;
   background-repeat: no-repeat;
   outline: none;
-   font-family: Roboto Condensed;
+  font-family: "Roboto Condensed";
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
-  letter-spacing: 0em;
-  text-align: center; 
+  text-align: center;
   text-transform: uppercase;
-} 
+  border: 2px solid  rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 62.5rem) {
+  .LoveCharactersList-title::before {
+    margin-bottom: 1rem;
+  }
+
+  .LoveCharactersList-title {
+    line-height: 2.25rem;
+    flex-wrap: wrap;
+  }
+
+  .container-match-card-img {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 3rem;
+  }
+}
