@@ -4,45 +4,56 @@ import axios from "axios";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
+
 const Home = () => {
+
+  let randomHeroes1 =Math.floor(Math.random() * 33);
+  let randomHeroes2 =Math.floor(Math.random() * 33);
+  let randomHeroes3 =Math.floor(Math.random() * 33);
+  let randomHeroes4 =Math.floor(Math.random() * 33);
+
+  while (randomHeroes2 === randomHeroes1) {
+    randomHeroes2 =Math.floor(Math.random() * 33);
+  }
+
+  while ((randomHeroes3 === randomHeroes2) || (randomHeroes3 === randomHeroes1)) {
+    randomHeroes3 =Math.floor(Math.random() * 33);
+  }
+
+  while ((randomHeroes4=== randomHeroes3) || (randomHeroes4 === randomHeroes2) || (randomHeroes4 === randomHeroes1)) {
+    randomHeroes4 =Math.floor(Math.random() * 33);
+  }
+
   const [randomImage1, setRandomImage1] = useState([]);
   const [randomImage2, setRandomImage2] = useState([]);
   const [randomImage3, setRandomImage3] = useState([]);
   const [randomImage4, setRandomImage4] = useState([]);
 
   useEffect(() => {
-    let randomHeroes = 0 + Math.floor(Math.random() * 4);
-
     axios
       .get(`http://localhost:8000/api/heroes/`)
-      .then((res) => res.data[randomHeroes])
+      .then((res) => res.data[randomHeroes1])
       .then((data) => setRandomImage1(data));
   }, []);
 
   useEffect(() => {
-    let randomHeroes = 4 + Math.floor(Math.random() * 7);
-
     axios
       .get(`http://localhost:8000/api/heroes/`)
-      .then((res) => res.data[randomHeroes])
+      .then((res) => res.data[randomHeroes2])
       .then((data) => setRandomImage2(data));
   }, []);
 
   useEffect(() => {
-    let randomHeroes = 7 + Math.floor(Math.random() * 10);
-
     axios
       .get(`http://localhost:8000/api/heroes/`)
-      .then((res) => res.data[randomHeroes])
+      .then((res) => res.data[randomHeroes3])
       .then((data) => setRandomImage3(data));
   }, []);
 
   useEffect(() => {
-    let randomHeroes = 10 + Math.floor(Math.random() * 13);
-
     axios
       .get(`http://localhost:8000/api/heroes/`)
-      .then((res) => res.data[randomHeroes])
+      .then((res) => res.data[randomHeroes4])
       .then((data) => setRandomImage4(data));
   }, []);
 
