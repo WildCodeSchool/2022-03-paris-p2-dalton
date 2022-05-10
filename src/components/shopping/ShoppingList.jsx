@@ -46,11 +46,12 @@ const ShoppingList = ({cart, updateCart}) => {
                 categories={categories}
                 setActiveCategory={setActiveCategory}
                 activeCategory={activeCategory}
-         />                   
+         />
+    <div className='whs-flex-wrap-desktop'>                 
         <ul className='whs-shopping-list'>
         {shoppings && 
         shoppings.filter((shopping) => {
-            return ((shopping.id !== 10) && (shopping.id !== 12));
+            return ((shopping.id !== 4) && (shopping.id !== 10));
         })
         .map((shopping) => 
         !activeCategory || activeCategory === shopping.race ? (
@@ -61,12 +62,13 @@ const ShoppingList = ({cart, updateCart}) => {
                         price={shopping.price} 
                 />
             <div>
-            <button className='button-add' onClick={() => addToCart(shopping.name, shopping.price)}>Add to bag</button>
+            <button className='button-add' onClick={() => addToCart(shopping.name, shopping.price )}>Add to bag</button>
             </div>
             </div>
         ) : null
         )}
         </ul>
+    </div>  
     </div>
   )
 }

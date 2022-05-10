@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/Categories.css';
-import filter from '../../assets/images/filter.png';
 
 const Categories = ({setActiveCategory, categories, activeCategory}) => {
   return (
@@ -10,7 +9,7 @@ const Categories = ({setActiveCategory, categories, activeCategory}) => {
               onChange={(e) => setActiveCategory(e.target.value)}
               className='whs-categories-select'
       >
-        <option value=''>FILTER BY RACE</option>
+        <option className='whs-categories-option-container' value=''>FILTER BY RACE</option>
       {categories.map((cat) => (
         <option key={cat} value={cat} className='whs-categories-option'>
               {cat}

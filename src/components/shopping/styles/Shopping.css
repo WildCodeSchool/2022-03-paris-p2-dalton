@@ -1,3 +1,7 @@
+.whs-shopping-list {
+	padding-bottom: 50px;
+}
+
 .whs-list-cards {
 	display: flex;
 	flex-direction: column;
@@ -34,4 +38,11 @@
 	padding-left: 70px;
 	margin-bottom: 10px;
 	font-size: 20px;
+}
+
+@media screen and (min-width: 1121px) {
+	.whs-shopping-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }

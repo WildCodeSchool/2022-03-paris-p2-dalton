@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import dustbin from '../../assets/images/dustbin.png';
 import './styles/Shopping.css';
 
 const Shopping = ({ shopping }) => {
@@ -13,8 +11,6 @@ const Shopping = ({ shopping }) => {
             <img className='whs-cards-images' src={shopping.picture} alt={shopping.name} />
             <div className='whs-cards-names'>
                 <span>{shopping.name}</span>
-            </div>
-            <div>
             </div>
         </li>
     </ul>
