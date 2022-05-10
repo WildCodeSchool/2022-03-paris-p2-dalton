@@ -1,10 +1,11 @@
 h2 {
     font-size: 24px;
-    color: white;
+    color: rgb(15, 15, 15);
+    padding-bottom: 15px;
 }
 
 h3 {
-    color: white;
+    color: rgb(15, 15, 15);
 }
 
 .cart {
@@ -99,6 +100,11 @@ h3 {
     color: black;
   }
 
+  .whs-cart-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .whs-cart-clear-button {
     border: 0;
     line-height: 2.5;
@@ -126,14 +132,89 @@ h3 {
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
+.whs-cart-checkout-button {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(15, 14, 14);
+  background-image: linear-gradient(to top left,
+                                    rgba(0, 0, 0, .2),
+                                    rgba(0, 0, 0, .2) 30%,
+                                    rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.whs-cart-checkout-button:hover {
+  background-color: rgb(54, 52, 61);
+}
+
+.whs-cart-checkout-button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+              inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
 .whs-delivery {
   border: solid 3px white;
   background-color: whitesmoke;
   color: black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.whs-delivery-span {
+  font-weight: bold;
 }
 
 .whs-payment {
   border: solid 3px white;
-    background-color: whitesmoke;
-    color: black;
+  background-color: whitesmoke;
+  color: black;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.whs-payment-span {
+  font-weight: bold;
+}
+
+.whs-payment-cards {
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 1121px) {
+  .whs-button-close {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+  }
+
+  .whs-cart-closed {
+    display: flex;
+    justify-content: center;
+  }
+
+  .whs-delivery {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .whs-payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+	.whs-cart-container {
+    display: flex;
+    justify-content: center;
+  }
 }
