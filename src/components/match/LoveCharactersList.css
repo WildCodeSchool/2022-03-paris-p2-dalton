@@ -152,7 +152,7 @@
 
 @media (max-width: 62.5rem) {
   .LoveCharactersList-title::before {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   .LoveCharactersList-title {
