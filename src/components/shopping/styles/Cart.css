@@ -6,6 +6,7 @@
 
 .whs-total {
   color: rgb(16, 16, 16);
+  padding: 1rem;
 }
 
 .cart {
@@ -95,9 +96,10 @@
 }
 
 .whs-cart-add-products {
-  border: solid 3px white;
+  /* border: solid 3px white; */
   background-color: whitesmoke;
   color: black;
+  padding: 1rem;
 }
 
 .whs-cart-buttons {
@@ -137,6 +139,7 @@
   border: 0;
   line-height: 2.5;
   padding: 0 20px;
+  margin-left: 1rem;
   font-size: 1rem;
   text-align: center;
   color: #fff;
@@ -163,7 +166,7 @@
 }
 
 .whs-delivery {
-  border: solid 3px white;
+  /* border: solid 3px white; */
   background-color: whitesmoke;
   color: black;
   display: flex;
@@ -175,7 +178,7 @@
 }
 
 .whs-payment {
-  border: solid 3px white;
+  /* border: solid 3px white; */
   background-color: whitesmoke;
   color: black;
   display: flex;
@@ -207,12 +210,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1rem;
   }
 
   .whs-payment {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1rem;
   }
 
   .whs-cart-container {
