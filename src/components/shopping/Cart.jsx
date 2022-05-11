@@ -6,7 +6,7 @@ import mastercard from '../../assets/images/mastercard.png';
 import paypal from '../../assets/images/paypal.png';
 
 const Cart = ({cart, updateCart}) => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const total  = cart.reduce(
     (acc, shopping) => acc + shopping.amount * shopping.price, 0
   )
@@ -16,7 +16,7 @@ const Cart = ({cart, updateCart}) => {
       <div className='whs-button-close'>
       <button 
         className='whs-cart-toggle-button-close'
-        onClick={() => setIsOpen(false)}
+        onClick={() => setIsOpen(!isOpen)}
       >
       <span>Close the cart</span>
       </button>
@@ -62,7 +62,7 @@ const Cart = ({cart, updateCart}) => {
     <div className='whs-cart-closed'>
       <button 
         className='whs-cart-toggle-button-open'
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsOpen(!isOpen)}
         >
         <span>Open the cart</span>
         </button>
