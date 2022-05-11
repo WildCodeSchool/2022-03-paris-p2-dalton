@@ -1,0 +1,170 @@
+/* ----- Love cards ----- */
+.love-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-top: 1rem;
+}
+.LoveCharactersList {
+  width: 100%;
+  margin: auto;
+  background-color: rgba(22, 20, 20, 1);
+  padding-bottom: 5rem;
+}
+
+.container-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.LoveCharactersList-title {
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Roboto Condensed";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.LoveCharactersList-title::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  content: url(../../assets/images/wonder_woman.svg);
+  margin-right: 1rem;
+}
+.title-top3 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.female::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  content: url(../../assets/images/catwoman.svg);
+  margin-right: 1rem;
+}
+
+.male::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  content: url(../../assets/images/daredevil.svg);
+  margin-right: 1rem;
+}
+
+#title-match-card {
+  font-family: "Roboto Condensed";
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 5rem;
+}
+.container-match-card-img {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 5rem;
+}
+
+.picture-match-card {
+  height: 219px;
+  width: 143px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid rgba(22, 107, 248, 1);
+}
+/* ----- Animation coeur qui bat ----- */
+.container-heart-blue {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  animation: 0.8s beat infinite;
+}
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.container-trigger {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.btn2 {
+  margin-top: 3rem;
+}
+.button-war {
+  color: rgba(22, 107, 248, 1);
+  height: 55px;
+  width: 173px;
+  border-radius: 100px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: none;
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid  rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 62.5rem) {
+  .LoveCharactersList-title::before {
+    margin-bottom: 1rem;
+  }
+
+  .LoveCharactersList-title {
+    line-height: 2.25rem;
+    flex-wrap: wrap;
+  }
+
+  .container-match-card-img {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 3rem;
+  }
+}

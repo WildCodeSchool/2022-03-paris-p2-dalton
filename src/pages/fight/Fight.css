@@ -1,0 +1,15 @@
+
+.pageFight {
+    background-color: #3A3A3A;
+}
+
+.introduce {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.introduce p {
+    display: flex;
+    justify-content: center;
+}
+

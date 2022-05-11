@@ -1,0 +1,12 @@
+
+.character-img {
+    min-width: 10.8vh;
+    min-height: 10.8vh;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.character p {
+    text-align: center;
+    font-size:xx-small;
+}
