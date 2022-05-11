@@ -123,6 +123,8 @@ const FightCharacterList = () => {
       let audio = new Audio(cris[getRandomInt(5)]);
 
       const fightA = async () => {
+          audio = new Audio(cris[getRandomInt(5)]);
+
           // Fighter A attack
           damage = getRandomInt(fighterA.force/8)
           if (damage<1) {damage=1}
@@ -148,6 +150,8 @@ const FightCharacterList = () => {
       }
 
       const fightB = async () => {
+          audio = new Audio(cris[getRandomInt(5)]);
+          
           // Fighter B attack
           if (liveB>0) {
             damage = getRandomInt(fighterB.force/8)
